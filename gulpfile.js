@@ -17,7 +17,7 @@ var express = require('express'),
     refresh = require('gulp-livereload'),
     livereload = require('connect-livereload'),
     livereloadport = 35729,
-    serverport = 5001;
+    serverport = 3001;
 
 // Set up an express server (not starting it yet)
 var server = express();
