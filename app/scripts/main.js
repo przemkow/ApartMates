@@ -1,9 +1,7 @@
 'use strict';
 
 var angular = require('angular'); // That's right! We can just require angular as if we were in node
-
-var CurriculumCtrl = require('./controllers/CurriculumCtrl');
-var CurriculumService = require('./services/CurriculumService');
+var UserCtrl = require('./controllers/UserCtrl');
 var AppConstants = require('./shared/AppConstants');
 var app = angular.module('myApp', [require('angular-route'), 'AppConstants']);
 app.factory('AppConstants', [AppConstants]);
@@ -11,14 +9,14 @@ app.factory('AppConstants', [AppConstants]);
 
 app.config(function($routeProvider) {
   $routeProvider
-    .when('/users', {
-      templateUrl: './views/users.html'
+    .when('/user', {
+      templateUrl: './views/user.html',
+      controller: 'UserCtrl',
+      controllerAs: 'userCtrl'
     })
     .otherwise({
-      redirectTo: '/users'
+      redirectTo: '/user'
     });
 });
 
-app.factory('UserService', ['$http', '$q', 'GLOBAL_SERVER_URL', UserService]);
-
-app.controller('UserCtrl', ['$scope', 'UserService', CurriculumCtrl]);
+app.controller('UserCtrl', ['$scope', UserCtrl]);

@@ -1,6 +1,7 @@
 "use strict";
 
 var userCtrl = function($scope) {
+	this.Name = "Moja nazwa";
 	
 };
 
