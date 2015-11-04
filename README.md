@@ -4,7 +4,7 @@ Project for Human-Computer Interaction course at FCT
 # Short instruction
 ````
 npm install - to install all dependencies 
-npm start - to start server on localhost:8000
+grunt serve - to start server on localhost:8080
 ````
 
 # angular-seed — the seed for AngularJS apps
