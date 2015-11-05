@@ -25,5 +25,6 @@
 .navigation-bar .navigation-title{
   text-align: center;
   vertical-align: middle;
+  line-height: 2em;
   font-size: 1.5em;
 }
