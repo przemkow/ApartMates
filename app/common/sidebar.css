@@ -15,10 +15,10 @@
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
-  left: 20%;
+  left: 250px;
   width: 0;
   height: 100%;
-  margin-left: -20%;
+  margin-left: -250px;
   overflow-y: auto;
   background: #c0dfd9;
   -webkit-transition: all 0.5s ease;
@@ -28,8 +28,7 @@
 }
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 20%;
-  min-width: 250px;
+  width: 250px;
 }
 
 #page-content-wrapper {
@@ -39,7 +38,7 @@
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
-  margin-right: -20%;
+  margin-right: -250px;
 }
 
 /* Sidebar Styles */
@@ -47,7 +46,7 @@
 .sidebar-nav {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 250px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -59,7 +58,6 @@
 }
 
 .sidebar-nav li a {
-  font-size: 1.5em;
   display: block;
   text-decoration: none;
   color: #3b3a36;
@@ -85,7 +83,7 @@
 
 .sidebar-nav > .sidebar-user-name {
   height: 65px;
-  font-size: 2em;
+  font-size: 18px;
   line-height: 60px;
 
   text-indent: 0px;
@@ -109,14 +107,14 @@
 .circular img {
   text-align: center;
   display: block;
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
   min-width: 100%;
   min-height: 100%;
 }
 @media(min-width:768px) {
   #wrapper {
-    padding-left: 20%;
+    padding-left: 270px;
     position: relative;
   }
 
@@ -125,12 +123,11 @@
   }
 
   #sidebar-wrapper {
-    width: 20%;
-    min-width: 250px;
+    width: 270px;
   }
 
   #wrapper.toggled #sidebar-wrapper {
-    width: 0;
+    width: 0px;
   }
 
   #page-content-wrapper {
@@ -140,6 +137,22 @@
   #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
+  }
+}
+
+@media(min-width: 1200px ){
+  /*kontener trzymajacy sidebar oraz page-contener wrapper*/
+  #wrapper {
+    padding-left: 20%;
+    position: relative;
+  }
+
+  #sidebar-wrapper {
+    width: 20%;
+  }
+
+  #page-content-wrapper {
+
   }
 }
 
