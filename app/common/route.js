@@ -12,7 +12,7 @@ myApp.config(
             templateUrl: './aprove/aprove.html'
         }).when('/accomplish', {
             title: 'Accomplish duty',
-            templateUrl: '../accomplish/accomplish.html'
+            templateUrl: './accomplish/accomplish.html'
         }).when('/devide', {
             title: 'Devide expenses',
             templateUrl: './devide/devide.html'
