@@ -1,0 +1,29 @@
+/*colors for website
+#c0dfd9
+#e9ece5
+#b3c2bf
+#3b3a36
+*/
+
+.navigation-bar {
+  background: #c0dfd9;
+  height: 3em;
+}
+
+.navigation-bar .glyphicon{
+  display: inline;
+  top: 7px;
+  color: #3b3a36;
+  padding-left: 10px;
+  font-size: 2em;
+  text-align: left;
+}
+
+.navigation-bar .navigation-icon{
+  float: left;
+}
+.navigation-bar .navigation-title{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5em;
+}

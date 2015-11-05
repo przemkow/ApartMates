@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="bower_components/angular-aside/dist/css/angular-aside.css">
   <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
 
-  <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="common/app.css">
+  <link rel="stylesheet" href="common/sidebar.css">
 </head>
 <body>
 
@@ -26,13 +26,14 @@
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
+      <span class="glyphicon glyphicon-menu-left menu-toggle visible-xs" aria-hidden="true"></span>
       <li class="sidebar-user-picture"><div class="circular"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Grzegorz_P_Pawlak1.jpg/160px-Grzegorz_P_Pawlak1.jpg"></div></li>
-      <li class="sidebar-user-name">User Name</li>
+      <li class="sidebar-user-name"><a href="#homePage">User Name</a></li>
       <hr>
-      <li><a href="#view1"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Waiting for approve</a></li>
-      <li><a href="#view2"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Accomplish duty</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>Divide expenses</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Add announcement</a></li>
+      <li><a href="#aprove"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Waiting for approve</a></li>
+      <li><a href="#accomplish"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Accomplish duty</a></li>
+      <li><a href="#devide"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>Divide expenses</a></li>
+      <li><a href="#announcement"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Add announcement</a></li>
       <hr class="short">
       <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Add new mate</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Add new room</a></li>
@@ -42,10 +43,15 @@
 
   <!-- Page Content -->
   <div id="page-content-wrapper">
+    <div class="navigation-bar">
+      <div class="navigation-icon">
+        <span class="glyphicon glyphicon-menu-hamburger menu-toggle visible-xs" aria-hidden="true"></span>
+      </div>
+      <div class="navigation-title">Tytuł w wąsatych nawiasach(bedzie w nawiasach)</div>
+    </div>
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
-          <a href="#" class="btn btn-default visible-xs" id="menu-toggle">Toggle Menu</a>
           <div ng-view></div>
         </div>
       </div>
@@ -64,15 +70,18 @@
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-aside/dist/js/angular-aside.js"></script>
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
+  <script src="common/app.js"></script>
+  <script src="homePage/homePage.js"></script>
+  <script src="aprove/aprove.js"></script>
+  <script src="accomplish/accomplish.js"></script>
+  <script src="devide/devide.js"></script>
+  <script src="announcement/announcement.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
 
   <script>
-    $("#menu-toggle").click(function(e) {
+    $(".menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
