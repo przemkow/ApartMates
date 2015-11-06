@@ -1,13 +1,17 @@
 /* Toggle Styles */
+@import 'variable';
+
 #wrapper {
   padding-left: 0;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+}
 
 #wrapper.toggled {
-  padding-left: 0px; }
+  padding-left: 0px;
+}
 
 #sidebar-wrapper {
   z-index: 1000;
@@ -17,67 +21,83 @@
   height: 100%;
   margin-left: -250px;
   overflow-y: auto;
-  background: #242736;
+  background: $color1;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+}
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 250px; }
+  width: 250px;
+}
 
 #page-content-wrapper {
   width: 100%;
-  position: absolute; }
+  position: absolute;
+}
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
-  margin-right: -250px; }
+  margin-right: -250px;
+}
 
 /* Sidebar Styles */
+
 .sidebar-nav {
   position: absolute;
   top: 0;
   width: 250px;
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+}
 
 .sidebar-nav li {
   text-indent: 2em;
-  line-height: 3em; }
+  line-height: 3em;
+}
 
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #EEEEEE;
+  color: $color3;
+
   -webkit-transition: color 100ms, background 400ms;
   -moz-transition: color 100ms, background 400ms;
   -ms-transition: color 100ms, background 400ms;
   -o-transition: color 100ms, background 400ms;
-  transition: color 100ms, background 400ms; }
+  transition: color 100ms, background 400ms;
+
+}
 
 .sidebar-nav li a:hover {
   text-decoration: none;
-  color: #242736;
-  background: #b3c2bf; }
+  color: $color1;
+  background: $color2;
+}
 
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .sidebar-nav > .sidebar-user-name {
   height: 4em;
   font-size: 1.3em;
   line-height: 4em;
-  text-indent: 0;
-  text-align: center; }
 
-.sidebar-nav > .sidebar-user-picture {
+  text-indent: 0;
+  text-align: center;
+}
+
+.sidebar-nav > .sidebar-user-picture{
   text-indent: 0;
   text-align: center;
   margin-top: 1em;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+}
+
 
 .circular {
   border-radius: 50%;
@@ -85,57 +105,77 @@
   width: 15em;
   height: 15em;
   margin: 0 auto;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8); }
-
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
 .circular img {
   text-align: center;
   display: block;
   height: 100%;
   width: 100%;
   min-width: 100%;
-  min-height: 100%; }
-
-@media (min-width: 768px) {
+  min-height: 100%;
+}
+@media(min-width: 768px) {
   #wrapper {
     padding-left: 270px;
-    position: relative; }
+    position: relative;
+  }
+
   #wrapper.toggled {
-    padding-left: 0; }
+    padding-left: 0;
+  }
+
   #sidebar-wrapper {
-    width: 270px; }
+    width: 270px;
+  }
+
   #wrapper.toggled #sidebar-wrapper {
-    width: 0px; }
+    width: 0px;
+  }
+
   #page-content-wrapper {
-    position: relative; }
+    position: relative;
+  }
+
   #wrapper.toggled #page-content-wrapper {
     position: relative;
-    margin-right: 0; } }
+    margin-right: 0;
+  }
+}
 
-@media (min-width: 1200px) {
+@media(min-width: 1200px ){
   /*kontener trzymajacy sidebar oraz page-contener wrapper*/
   #wrapper {
     padding-left: 20%;
-    position: relative; }
+    position: relative;
+  }
+
   #sidebar-wrapper {
-    width: 20%; } }
+    width: 20%;
+  }
 
-.sidebar-nav {
-  width: 100%; }
+  #page-content-wrapper {
 
-.sidebar-nav .glyphicon {
+  }
+}
+.sidebar-nav{
+  width: 100%;
+}
+.sidebar-nav .glyphicon{
   display: inline;
   top: 0.3em;
   padding-right: 0.5em;
-  font-size: 2em; }
+  font-size: 2em;
+}
 
-.sidebar-nav hr {
+.sidebar-nav hr{
   border-top: 2px solid #eee;
-  margin: 0.5em 0.3em; }
+  margin: 0.5em 0.3em;
+}
 
-.sidebar-nav hr.short {
+.sidebar-nav hr.short{
   border-top: 2px solid #eee;
-  margin: 0.3em 1em 0.3em 1em; }
-
-/*# sourceMappingURL=sidebar.css.map */
+  margin: 0.3em 1em 0.3em 1em;
+}
