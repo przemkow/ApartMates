@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="common/sidebar.css">
     <link rel="stylesheet" href="common/login.css">
 </head>
-<body>
+<body ng-controller="userCtrl as user">
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -33,14 +33,14 @@
             <div id="div-forms">
 
                 <!-- Begin # Login Form -->
-                <form id="login-form" ng-controller="loginCtrl" ng-submit="login(loginCtrl.credentials)">
+                <form id="login-form" ng-submit="user.login(user.credentials,user.user)">
                     <div class="modal-body">
                         <div id="div-login-msg">
                             <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
                             <span id="text-login-msg">Type your username and password.</span>
                         </div>
-                        <input id="login_username" ng-model="loginCtrl.credentials.login" class="form-control" type="text" placeholder="Username" required>
-                        <input id="login_password" ng-model="loginCtrl.credentials.password" class="form-control" type="password" placeholder="Password" required>
+                        <input id="login_username" ng-model="user.credentials.login" class="form-control" type="text" placeholder="Username" required>
+                        <input id="login_password" ng-model="user.credentials.password" class="form-control" type="password" placeholder="Password" required>
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox"> Remember me
@@ -66,13 +66,13 @@
 <div id="wrapper">
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-        <ul class="sidebar-nav" ng-controller="userCtrl as user">
+        <ul class="sidebar-nav">
             <span class="glyphicon glyphicon-menu-left menu-toggle visible-xs" aria-hidden="true"></span>
             <li class="sidebar-user-picture">
-                <div class="circular"><img ng-click="refresh()" src="{{user.image}}" />
+                <div class="circular"><img data-toggle="modal" data-target="#login-modal" src="{{user.user.image}}" />
                 </div>
             </li>
-            <li class="sidebar-user-name"><a href="#homePage">{{ user.name }} {{user.lastName}}</a></li></br>
+            <li class="sidebar-user-name"><a href="#homePage">{{ user.user.name }} {{user.user.lastName}}</a></li></br>
             <hr>
             <li><a href="#aprove"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Waiting for
                 approve</a></li>
@@ -83,7 +83,6 @@
             <li><a href="#announcement"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Add
                 announcement</a></li>
             <hr class="short">
-            <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Add new mate</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Add new room</a></li>
         </ul>
@@ -121,7 +120,7 @@
 <script src="common/app.js"></script>
 <script src="common/route.js"></script>
 <script src="homePage/homePage.js"></script>
-<script src="user/loginController.js"></script>
+<script src="user/jQueryLogin.js"></script>
 <script src="user/userController.js"></script>
 <script src="aprove/aprove.js"></script>
 <script src="accomplish/accomplish.js"></script>

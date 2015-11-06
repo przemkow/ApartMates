@@ -5,32 +5,47 @@
 
 
 angular.module('myApp.users', [])
-    .factory('usersService', UserService)
-    .controller('loginCtrl', ['$scope', 'usersService', LoginController])
-    .controller('userCtrl', ['$scope', 'usersService', UserController]);
-function UserService() {
-    var us = this;
-    function set(name,surname,image){
-        us.name=name;
-        us.lastname = surname;
-        us.image = image;
-    }
+    .factory('usersService', function(){
 
-//https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Grzegorz_P_Pawlak1.jpg/160px-Grzegorz_P_Pawlak1.jpg
-    return {
-        name: us.name,
-        lastname: us.lastname,
-        image: us.image,
-        setUser: set
-    };
+    })
+    .controller('userCtrl', [UserController]);
+function UserService() {
+
 };
 
-function UserController($scope, userService) {
-    $scope.user;
+function UserController() {
 
-    $scope.refresh = function () {
-        $scope.user.name = userService.name;
-        $scope.user.lastName = userService.lastname;
-        $scope.user.image = userService.image;
+    this.credentials = {
+        login: '',
+        password: ''
+    };
+    this.login = function(credentials,user) {
+        var $lg_username = $('#login_username').val();
+        var $lg_password = $('#login_password').val();
+        if (!validateUser(credentials)) {
+            msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
+        } else {
+            msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
+            user.name="John";
+            user.lastName="Smith";
+            user.image="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Grzegorz_P_Pawlak1.jpg/160px-Grzegorz_P_Pawlak1.jpg";
+            setTimeout(
+                function()
+                {
+                    $('#login-modal').modal('hide');
+                }, 1200);
+        }
+    };
+
+    this.user={
+        name: "Guest",
+        lastName: "",
+        image: "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
     }
+}
+
+
+function validateUser(credentials){
+    return credentials.login=="admin" &&
+        credentials.password == "1234";
 }
