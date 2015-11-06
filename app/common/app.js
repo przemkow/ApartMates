@@ -5,6 +5,7 @@ var myApp = angular.module('myApp', [
   'ngRoute',
   'myApp.homePage',
   'myApp.aprove',
+  'myApp.users',
   'myApp.accomplish',
   'myApp.devide',
   'myApp.announcement',
