@@ -6,6 +6,7 @@ var myApp = angular.module('myApp', [
   'ngAnimate',
   'myApp.homePage',
   'myApp.aprove',
+  'myApp.users',
   'myApp.accomplish',
   'myApp.devide',
   'myApp.announcement',
