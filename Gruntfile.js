@@ -14,17 +14,20 @@ module.exports = function(grunt) {
             }
         },
         "watch": {
-            "build": {
-                files: ["app/**/*.js", "app/**/*.html", "app/**/*.scss" ],
-                tasks: ['sass'],
-                options: {
-                    livereload: true,
-                }
+            options: {
+              livereload: true,
+            },
+            "livereload": {
+              files: ["app/**/*.js", "app/**/*.html", "app/**/*.scss"]
+            },
+            "sass":{
+              files: ["app/**/*.scss"],
+              tasks: ['sass']
             }
         },
         "concurrent": {
             "build": {
-                tasks: ["connect:keepalive", "watch:build"],
+                tasks: ["connect:keepalive", "watch"],
                 options: {
                     logConcurrentOutput: true
                 }
@@ -36,8 +39,9 @@ module.exports = function(grunt) {
           },
           dist: {
             files: {
-              'app/common/app.css': 'app/common/scss/app.scss',
-              'app/common/sidebar.css': 'app/common/scss/sidebar.scss'
+              'app/common/app.css': 'app/common/style/app.scss',
+              'app/common/login.css': 'app/common/style/login.scss',
+              'app/common/sidebar.css': 'app/common/style/sidebar.scss'
             }
           }
         }
