@@ -1,0 +1,19 @@
+.aprove li {
+  clear: both; }
+
+.aprove .reject-input {
+  margin-top: 1.5em; }
+
+.aprove .fadeIn {
+  line-height: 20px;
+  opacity: 1; }
+
+.aprove .fadeIn.ng-hide-add, .aprove .fadeIn.ng-hide-remove {
+  transition: all linear 0.5s; }
+
+.aprove .fadeIn.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px; }
+
+/*# sourceMappingURL=aprove.css.map */

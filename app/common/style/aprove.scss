@@ -1,0 +1,26 @@
+.aprove{
+
+  li{
+    clear: both;
+  }
+  .reject-input{
+    margin-top: 1.5em;
+  }
+
+  .fadeIn {
+    line-height: 20px;
+    opacity: 1;
+  }
+
+  .fadeIn.ng-hide-add, .fadeIn.ng-hide-remove {
+    transition: all linear 0.5s;
+  }
+
+  .fadeIn.ng-hide {
+    line-height: 0;
+    opacity: 0;
+    padding: 0 10px;
+  }
+
+
+}

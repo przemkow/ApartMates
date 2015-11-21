@@ -41,7 +41,8 @@ module.exports = function(grunt) {
             files: {
               'app/common/app.css': 'app/common/style/app.scss',
               'app/common/login.css': 'app/common/style/login.scss',
-              'app/common/sidebar.css': 'app/common/style/sidebar.scss'
+              'app/common/sidebar.css': 'app/common/style/sidebar.scss',
+              'app/common/aprove.css': 'app/common/style/aprove.scss'
             }
           }
         }
