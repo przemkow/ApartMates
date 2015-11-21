@@ -1,2 +1,15 @@
-<h1>Aprove</h1>
-<img src="http://x3.cdn03.imgwykop.pl/c3201142/comment_u7aQiFuiRTItCAt3bPoauK76QlJXwy0B.jpg">
+<div class="col-lg-1">
+</div>
+<div class="col-lg-10" ng-app="myApp.aprove" ng-controller="aprove">
+  <h1>Aprove</h1>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="duty in awaiting_duties" ng-class="duty.approved ? 'list-group-item-success' : 'dupa'">
+      {{duty.title}} by {{duty.resp_person}}
+      <button ng-click="aprove(duty.id)" class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+      <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+    </li>
+  </ul>
+
+</div>
+<div class="col-lg-2">
+</div>

@@ -1,14 +1,15 @@
 'use strict';
 
-angular.module('myApp.aprove', ['ngRoute'])
+angular.module('myApp.accomplish', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/aprove', {
-    templateUrl: 'aprove/aprove.html',
-    controller: 'aprove'
+  $routeProvider.when('/accomplish', {
+    templateUrl: 'accomplish/accomplish.html',
+    controller: 'accomplish'
   });
 }])
 
-.controller('aprove', [function() {
+.controller('accomplish', [function() {
+
 
 }]);

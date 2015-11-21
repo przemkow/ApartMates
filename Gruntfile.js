@@ -51,7 +51,6 @@ module.exports = function(grunt) {
     // Register modules
     //
     require('load-grunt-tasks')(grunt);
-
     // Default task(s).
     grunt.registerTask("serve", ["sass","concurrent:build"]);
     grunt.registerTask("compile", ["sass"]);
