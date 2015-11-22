@@ -104,8 +104,8 @@ app/                    --> all of the source files for the application
     homePage.js         --> tests of the controller
   view2/                --> the view2 view template and logic
     view2.html            --> the partial template
-    aprove.js              --> the controller logic
-    aprove_test.js         --> tests of the controller
+    approve.js              --> the controller logic
+    approve_test.js         --> tests of the controller
   app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)
   index-async.html      --> just like index.html, but loads js files asynchronously

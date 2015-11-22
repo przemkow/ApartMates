@@ -1,7 +1,7 @@
 <div class="col-lg-1">
 </div>
-<div class="col-lg-10 aprove" ng-app="myApp.aprove" ng-controller="aprove">
-  <h1>Aprove</h1>
+<div class="col-lg-10 approve" ng-app="myApp.approve" ng-controller="approve">
+  <h1>Approve</h1>
   <ul class="list-group">
     <li class="list-group-item" ng-repeat="duty in awaiting_duties"
         ng-class="{'list-group-item-success animated bounceOutLeft' : duty.status === 1, 'list-group-item-danger' : duty.status === -1}"
@@ -12,7 +12,7 @@
         <button mwl-confirm
                 title="Confirm"
                 message="Are you sure you want to confirm this duty?"
-                on-confirm="aprove(duty.id)"
+                on-confirm="approve(duty.id)"
                 class="btn btn-success" ><i class="glyphicon glyphicon-ok" aria-hidden="true"></i></button>
         <button ng-click="expandForm = true" class="btn btn-danger" ><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></button>
 

@@ -5,17 +5,17 @@
 myApp.config(
     ['$routeProvider', function($routeProvider) {
         $routeProvider.when('/homePage', {
-            title: 'AppartMates',
+            title: 'ApartMates',
             templateUrl: './homePage/homePage.html'
-        }).when('/aprove', {
+        }).when('/approve', {
             title: 'Waiting for approve',
-            templateUrl: './aprove/aprove.html'
+            templateUrl: './approve/approve.html'
         }).when('/accomplish', {
             title: 'Accomplish duty',
             templateUrl: './accomplish/accomplish.html'
-        }).when('/devide', {
-            title: 'Devide expenses',
-            templateUrl: './devide/devide.html'
+        }).when('/divide', {
+            title: 'Divide expenses',
+            templateUrl: './divide/divide.html'
         }).when('/announcement', {
             title: 'Add announcement',
             templateUrl: './announcement/announcement.html'

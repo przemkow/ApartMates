@@ -1,10 +1,10 @@
 'use strict';
 
-describe('myApp.aprove module', function() {
+describe('myApp.approve module', function() {
 
   beforeEach(module('myApp.view2'));
 
-  describe('aprove controller', function(){
+  describe('approve controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body

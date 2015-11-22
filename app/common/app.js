@@ -5,10 +5,10 @@ var myApp = angular.module('myApp', [
   'ngRoute',
   'ngAnimate',
   'myApp.homePage',
-  'myApp.aprove',
+  'myApp.approve',
   'myApp.users',
   'myApp.accomplish',
-  'myApp.devide',
+  'myApp.divide',
   'myApp.announcement',
   'myApp.version'
 ]);

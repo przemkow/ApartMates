@@ -29,11 +29,11 @@ describe('my app', function() {
   describe('view2', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/aprove');
+      browser.get('index.html#/approve');
     });
 
 
-    it('should render aprove when user navigates to /aprove', function() {
+    it('should render approve when user navigates to /approve', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 2/);
     });
