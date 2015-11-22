@@ -18,7 +18,7 @@ module.exports = function(grunt) {
               livereload: true,
             },
             "livereload": {
-              files: ["app/**/*.js", "app/**/*.html", "app/**/*.scss"]
+              files: ["app/**/*.js", "app/**/*.html", "app/**/*.scss", "app/**/*.css"]
             },
             "sass":{
               files: ["app/**/*.scss"],

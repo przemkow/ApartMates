@@ -1,2 +1,62 @@
-<h1>Accomplish</h1>
-<img src="http://x3.cdn03.imgwykop.pl/c3201142/comment_u7aQiFuiRTItCAt3bPoauK76QlJXwy0B.jpg">
+<div class="col-lg-1"/>
+<div class="col-lg-10 accomplish" ng-app="myApp.accomplish" ng-controller="accomplish">
+    <h1>Pending duties</h1>
+    </time>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="duty in awaiting_duties | orderBy:'deadline':reverse"
+            ng-class="{'list-group-item-warning class smoothColor ' : duty.status === 1, 'list-group-item-danger' : duty.status === -1,
+            'list-group-item-success animated bounceOutLeft' : duty.status === 2}" ng-hide="duty.status === 2">
+            <div class="row rowView">
+                <div class="col-md-1">
+                    <time datetime={{duty.deadline}} class="icon">
+                        <em>{{duty.deadline | date: 'EEEE'}}</em>
+                        <strong>{{duty.deadline | date: 'MMMM'}}</strong>
+                        <span>{{duty.deadline | date: 'dd'}}</span>
+                    </time>
+                </div>
+                <div class="col-md-9">
+                    <span>{{duty.title}}</span>
+                </div>
+                <div class="col-md-1" ng-hide="duty.status === 1">
+                    <button mwl-confirm
+                            title="Confirm"
+                            message="Are you sure you want to confirm this duty?"
+                            on-confirm="accomplish(duty.id)"
+                            class="btn btn-success"><i class="glyphicon glyphicon-ok" aria-hidden="true"></i></button>
+                </div>
+                <div class="col-md-1">
+                    <button ng-if="duty.status === -1" ng-click="$parent.complaintsList = !complaintsList"
+                            class="btn btn-info"><i class="glyphicon glyphicon-info-sign" aria-hidden="true"></i>
+                    </button>
+                    <span ng-show="duty.status === 1">Waiting for approval</span>
+                </div>
+            </div>
+            <div class="col-lg-1"/>
+            <div class="row col-lg-9" ng-show="complaintsList">
+                <ul class="list-group">
+                    <li class="list-group-item"
+                        ng-repeat="rejectInfo in duty.reject_info | orderBy:'date':reverse">
+                        <div class="row rowView">
+                            <div class="col-md-1"/>
+                            <div class="col-md-1">
+                                <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal" src="{{rejectInfo.image}}"/>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <span>{{rejectInfo.user_name}} </span>
+                            </div>
+                            <div class="col-md-5">
+                                <span>{{rejectInfo.msg}} </span>
+                            </div>
+                            <div class="col-md-2">
+                                <span class="dateStamp"> posted</br>{{dayCounter(rejectInfo.date)}} </span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-1"/>
+        </li>
+    </ul>
+</div>
+<div class="col-lg-2"/>
