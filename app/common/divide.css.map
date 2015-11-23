@@ -4,6 +4,6 @@
 	"sources": [
 		"style/divide.scss"
 	],
-	"mappings": "",
+	"mappings": "AAAA,QAAQ,CAAA;EACN,MAAM,EAAE,gBAAiB,GAC1B",
 	"names": []
 }

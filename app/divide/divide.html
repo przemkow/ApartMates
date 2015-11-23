@@ -1,7 +1,39 @@
 <div class="col-lg-1"/>
-<div class="col-lg-10 divide" ng-app="myApp.divide" ng-controller="accomplish">
+<div class="col-lg-10 divide" ng-app="myApp.divide" ng-controller="divideCtrl as divide"
+     ng-controller="userCtrl as user">
 
-    <span>Who?</span>
+    <h1>Add new expense</h1>
 
+    <form role="form">
+        <div class="form-group">
+            <label for="user">Who spent the money:</label>
+            <select class="form-control" id="user" ng-model="expense.whose"
+                    ng-options="opt as opt.user_name for opt in usersList" ng-init="selected=user.user"></select>
+        </div>
+        <div class="form-group">
+            <label for="amount">How much:</label>
+            <input type="number" class="form-control" ng-model="expense.amount" id="amount"
+                   placeholder="Enter the amount in euros">
+        </div>
+        <div class="form-group">
+            <label for="type">For what:</label>
+            <input type="text" class="form-control" ng-model="expense.desc" id="type" placeholder="For what">
+        </div>
 
+        <label>Select mates to share expenses with:</label>
+        <div>
+            <input type="checkbox" ng-click="toggleAll()" ng-model="isAllSelected" id="checkbox1">
+            <label for="checkbox1">Select all</label>
+        </div>
+        <div ng-repeat="sUser in usersList">
+            <input type="checkbox" ng-model="sUser.selected" ng-change="optionToggled()">{{sUser.user_name}}
+        </div>
+
+        <button type="submit" ng-click="update(expense)" class="btn btn-default">Submit</button>
+    </form>
+
+    <b>co w tym widoku tak na prawdę ma być?</b>
+    //coś jest jeszcze skopane z bindowaniem danych z checkboxów
 </div>
+<div class="col-lg-1"/>
+

@@ -5,11 +5,11 @@ angular.module('myApp.accomplish', ['ngRoute'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/accomplish', {
             templateUrl: 'accomplish/accomplish.html',
-            controller: 'accomplish'
+            controller: 'accomplishCtrl'
         });
     }])
 
-    .controller('accomplish', ['$scope', 'accomplishFactory', function ($scope, accomplishFactory) {
+    .controller('accomplishCtrl', ['$scope', 'accomplishFactory', function ($scope, accomplishFactory) {
         $scope.awaiting_duties = accomplishFactory.getData;
         $scope.accomplish = function (id) {
             $scope.awaiting_duties[id].status = 1;
@@ -22,7 +22,7 @@ angular.module('myApp.accomplish', ['ngRoute'])
             var formattedDate = new Date(parts[0], parts[1] - 1, parts[2]);
 
             var a = dateNow.setHours(0, 0, 0, 0) - formattedDate;
-            a = Math.round(a * 1.15740741) / 100000000;
+            a = Math.round((a * 1.15740741) / 100000000);
 
             if (a === 0)
                 return "today";
@@ -37,7 +37,7 @@ angular.module('myApp.accomplish', ['ngRoute'])
         var rejectInfo = [{
             user_name: 'Kuba',
             msg: "jest brudno",
-            date: "2015-11-22",
+            date: "2015-11-23",
             image: "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
         },
             {
