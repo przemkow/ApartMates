@@ -1,17 +1,17 @@
-.aprove li {
+.approve li {
   clear: both; }
 
-.aprove .reject-input {
+.approve .reject-input {
   margin-top: 1.5em; }
 
-.aprove .fadeIn {
+.approve .fadeIn {
   line-height: 20px;
   opacity: 1; }
 
-.aprove .fadeIn.ng-hide-add, .aprove .fadeIn.ng-hide-remove {
+.approve .fadeIn.ng-hide-add, .approve .fadeIn.ng-hide-remove {
   transition: all linear 0.5s; }
 
-.aprove .fadeIn.ng-hide {
+.approve .fadeIn.ng-hide {
   line-height: 0;
   opacity: 0;
   padding: 0 10px; }

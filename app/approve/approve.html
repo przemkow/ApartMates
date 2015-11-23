@@ -9,12 +9,12 @@
       <fieldset ng-disabled="duty.status === -1">
           {{duty.title}} by {{duty.resp_person}}
 
+        <button ng-click="expandForm = true" class="btn btn-danger pull-right"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></button>
         <button mwl-confirm
                 title="Confirm"
                 message="Are you sure you want to confirm this duty?"
-                on-confirm="approve(duty.id)"
-                class="btn btn-success" ><i class="glyphicon glyphicon-ok" aria-hidden="true"></i></button>
-        <button ng-click="expandForm = true" class="btn btn-danger" ><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></button>
+                on-confirm="aprove(duty.id)"
+                class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok" aria-hidden="true"></i></button>
 
         <div class='fadeIn' ng-show="expandForm">
           <input ng-model="rejectMessage" class="form-control reject-input" id="reject" placeholder="Why you rejected {{duty.resp_person}} cleaning?">
