@@ -2,6 +2,7 @@
 
 angular.module('myApp.announcement', ['ngRoute'])
 
+
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/announcement', {
             templateUrl: 'announcement/announcement.html',
@@ -9,9 +10,9 @@ angular.module('myApp.announcement', ['ngRoute'])
         });
     }])
 
-    .controller('announcementCtrl', ['$scope', 'announcementFactory', function ($scope, announcementFactory) {
+    .controller('announcementCtrl', ['$scope', 'announcementFactory', function ($scope, usersService) {
+        usersService.getPeople($scope);
 
-        $scope.usersList = announcementFactory.getData;
         var checked;
 
         $scope.updateAll = function (announce) {
@@ -26,14 +27,5 @@ angular.module('myApp.announcement', ['ngRoute'])
     }])
 
 
-    .factory('announcementFactory', function () {
-        return {
-            getData: [
-                {id: 0, user_name: "Monika"},
-                {id: 1, user_name: "Kuba"},
-                {id: 2, user_name: "Mikołaj"},
-                {id: 3, user_name: "Przemek"},
-                {id: 4, user_name: "John"}
-            ]
-        };
-    });
+    .factory('announcementFactory', ['$http', usersService]);
+

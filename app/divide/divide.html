@@ -42,7 +42,7 @@
         </div>
 
         <label>Select mates to share expenses with:</label>
-        <input type="checkbox" ng-model="expense.all" ng-change="updateAll(announce)">
+        <input type="checkbox" ng-model="expense.all" ng-change="updatexAll(announce)">
         <label class="control-label">Select all</label>
         <div class="controls">
             <label class="checkbox inline" ng-repeat="sharedUser in usersList">
@@ -52,8 +52,6 @@
 
         <button type="submit" ng-click="update(expense)" class="btn btn-default">Submit</button>
     </form>
-
-    <pre>{{expense | json}}</pre>
 </div>
 <div class="col-lg-1"/>
 

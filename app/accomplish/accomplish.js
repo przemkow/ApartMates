@@ -1,5 +1,19 @@
 'use strict';
 
+var accomplishFactory = function ($http) {
+    var service = {};
+
+    service.getDuties = function ($scope) {
+        $http.get('accomplish/accomplishData.json')
+            .success(function (data) {
+                $scope.awaiting_duties = data;
+            });
+        return service;
+    };
+
+    return service;
+};
+
 angular.module('myApp.accomplish', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -11,7 +25,8 @@ angular.module('myApp.accomplish', ['ngRoute'])
 
     .controller('accomplishCtrl', ['$scope', 'accomplishFactory', function ($scope, accomplishFactory) {
 
-        $scope.awaiting_duties = accomplishFactory.getData;
+        accomplishFactory.getDuties($scope);
+
         $scope.accomplish = function (id) {
             $scope.awaiting_duties[id].status = 1;
             $scope.complaintsList = false;
@@ -35,53 +50,4 @@ angular.module('myApp.accomplish', ['ngRoute'])
         }
     }])
 
-    .factory('accomplishFactory', function () {
-        var rejectInfo = [{
-            user_name: 'Kuba',
-            msg: "jest brudno",
-            date: "2015-11-23",
-            image: "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
-        },
-            {
-                user_name: 'Mikołaj',
-                msg: "bo nie",
-                date: "2015-11-20",
-                image: "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
-            },
-            {
-                user_name: 'Przemek',
-                msg: "syf i tyle",
-                date: "2015-10-20",
-                image: "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
-            }];
-
-
-        return {
-            getData: [
-                {
-                    id: 0,
-                    title: 'Kitchen cleaning',
-                    resp_person: 'Monika',
-                    deadline: "2015-11-21",
-                    status: 0,
-                    reject_info: ""
-                },
-                {
-                    id: 1,
-                    title: 'Bathroom cleaning',
-                    resp_person: 'Monika',
-                    deadline: "2015-12-01",
-                    status: 0,
-                    reject_info: rejectInfo
-                },
-                {
-                    id: 2,
-                    title: 'Living room cleaning',
-                    resp_person: 'Monika',
-                    deadline: "2015-11-16",
-                    status: -1,
-                    reject_info: rejectInfo
-                }
-            ]
-        };
-    });
+    .factory('accomplishFactory', ['$http', accomplishFactory]);
