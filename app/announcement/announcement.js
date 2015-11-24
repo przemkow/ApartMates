@@ -9,8 +9,8 @@ angular.module('myApp.announcement', ['ngRoute'])
   });
 }])
 
-.controller('announcementCtrl', ['$scope', 'announcementFactory', function ($scope, announcementFactory) {
-  $scope.usersList = announcementFactory.getData;
+.controller('announcementCtrl', ['$scope', 'announcementFactory', function ($scope, usersService) {
+  usersService.getPeople($scope);
 
   $scope.update = function(expense) {
     $scope.master = angular.copy(expense); //tutaj można zapisać dane z formularza
@@ -30,14 +30,4 @@ angular.module('myApp.announcement', ['ngRoute'])
 }])
 
 
-.factory('announcementFactory', function () {
-  return {
-    getData: [
-      {id: 0, user_name: "Monika"},
-      {id: 1, user_name: "Kuba"},
-      {id: 2, user_name: "Mikołaj"},
-      {id: 3, user_name: "Przemek"},
-      {id: 4, user_name: "John"}
-    ]
-  };
-});
+.factory('announcementFactory', ['$http',usersService ]);

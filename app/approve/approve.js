@@ -1,5 +1,21 @@
 'use strict';
 
+var approveService = function($http){
+
+  var service = {};
+  service.awaiting_duties = {}
+  service.getDuties = function($scope) {
+    $http.get('approve/approveData.json')
+        .success(function(data) {
+          $scope.awaiting_duties = data;
+          service.awaiting_duties =  data;
+        });
+    return service.awaiting_duties;
+  };
+
+  return service;
+};
+
 angular.module('myApp.approve', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
 
 .config(['$routeProvider', function($routeProvider) {
@@ -10,7 +26,7 @@ angular.module('myApp.approve', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
 }])
 
 .controller('approve', ['$scope', 'approveFactory', function($scope, approveFactory) {
-  $scope.awaiting_duties = approveFactory.getData;
+  approveFactory.getDuties($scope);
   $scope.approve = function(id){
     $scope.awaiting_duties[id].status = 2;
   };
@@ -21,16 +37,9 @@ angular.module('myApp.approve', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
   }
 }])
 
+.factory('approveFactory', ['$http',approveService ]);
 //  STATUS LIST:
 // -1 = Rejected
 // 0 = newAwaitingDuty
 // 1 = doneWaitingForAccept
 // 2 = Accepted
-.factory('approveFactory', function() {
-  return {
-    getData :[
-      {id: 0, title: 'Kitchen cleaning', resp_person:'Monika', status: 0, rejected_msg:""},
-      {id: 1, title: 'Bathroom cleaning', resp_person:'Kuba', status: 0, rejected_msg:""}
-    ]
-  };
-});

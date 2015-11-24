@@ -1,0 +1,16 @@
+[
+  {
+    "id": 0,
+    "title": "Kitchen cleaning",
+    "resp_person": "Monika",
+    "status": 0,
+    "rejected_msg": ""
+  },
+  {
+    "id": 1,
+    "title": "Bathroom cleaning",
+    "resp_person": "Kuba",
+    "status": 0,
+    "rejected_msg": ""
+  }
+]
