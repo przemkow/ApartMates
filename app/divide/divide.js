@@ -42,5 +42,5 @@ angular.module('myApp.divide', ['ngRoute'])
         }
     }])
 
-.factory('divideFactory', ['$http', usersService]);
+    .factory('divideFactory', ['$http', usersService]);
 

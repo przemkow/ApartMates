@@ -4,22 +4,22 @@
 
     <button type="submit" ng-click="newExpense = true" class="btn btn-default">New expense</button>
 
-   <!-- <ul class="list-group">
-        <li class="list-group-item" ng-repeat="exp in awaiting_duties | orderBy:'deadline':reverse"
-            ng-class="{'list-group-item-warning class smoothColor ' : duty.status === 1, 'list-group-item-danger' : duty.status === -1,
-            'list-group-item-success animated bounceOutLeft' : duty.status === 2}" ng-hide="duty.status === 2">
-            <div class="row rowView">
-                <div class="col-xs-1">
-                    <time datetime={{duty.deadline}} class="icon">
-                        <em>{{duty.deadline | date: 'EEEE'}}</em>
-                        <strong>{{duty.deadline | date: 'MMMM'}}</strong>
-                        <span>{{duty.deadline | date: 'dd'}}</span>
-                    </time>
-                </div>
-                </div>
-            </li>
-        </ul>
--->
+    <!-- <ul class="list-group">
+         <li class="list-group-item" ng-repeat="exp in awaiting_duties | orderBy:'deadline':reverse"
+             ng-class="{'list-group-item-warning class smoothColor ' : duty.status === 1, 'list-group-item-danger' : duty.status === -1,
+             'list-group-item-success animated bounceOutLeft' : duty.status === 2}" ng-hide="duty.status === 2">
+             <div class="row rowView">
+                 <div class="col-xs-1">
+                     <time datetime={{duty.deadline}} class="icon">
+                         <em>{{duty.deadline | date: 'EEEE'}}</em>
+                         <strong>{{duty.deadline | date: 'MMMM'}}</strong>
+                         <span>{{duty.deadline | date: 'dd'}}</span>
+                     </time>
+                 </div>
+                 </div>
+             </li>
+         </ul>
+ -->
 
     <form role="form" ng-show="newExpense">
         <div class="form-group">
@@ -42,11 +42,13 @@
         </div>
 
         <label>Select mates to share expenses with:</label>
-        <input type="checkbox" ng-model="expense.all" ng-change="updatexAll(announce)">
+        <input type="checkbox" ng-model="expense.all" ng-change="updateAll(announce)">
         <label class="control-label">Select all</label>
+
         <div class="controls">
             <label class="checkbox inline" ng-repeat="sharedUser in usersList">
-                <input type="checkbox" value="{{sharedUser.id}}" ng-model="expense.usersList[sharedUser.id]"> {{sharedUser.id}}
+                <input type="checkbox" value="{{sharedUser.id}}" ng-model="expense.usersList[sharedUser.id]">
+                {{sharedUser.user_name}}
             </label>
         </div>
 

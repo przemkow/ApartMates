@@ -14,16 +14,18 @@
         </div>
 
         <label>Select mates to share announce with:</label>
-<div>
-        <input type="checkbox" ng-model="announce.all" ng-change="updateAll(announce)">
-        <label class="control-label">Select all</label>
-    </div>
+
+        <div>
+            <input type="checkbox" ng-model="announce.all" ng-change="updateAll(announce)">
+            <label class="control-label">Select all</label>
+        </div>
         <div class="form-group">
             <label class="checkbox" ng-repeat="sharedUser in usersList">
-                <input type="checkbox" value="{{sharedUser.id}}" ng-model="announce.usersList[sharedUser.id]"> {{sharedUser.id}}
+                <input type="checkbox" value="{{sharedUser.id}}" ng-model="announce.usersList[sharedUser.id]">
+                {{sharedUser.user_name}}
             </label>
         </div>
-         <button type="button" data-ng-click="save()" class="btn btn-default">Save</button>
+        <button type="button" data-ng-click="save()" class="btn btn-default">Save</button>
     </form>
 </div>
 <div class="col-lg-1"/>
