@@ -1,5 +1,19 @@
 'use strict';
+var usersService =function($http){
 
+    var service = {};
+    service.people = {}
+    service.getPeople = function($scope) {
+        $http.get('divide/people.json')
+            .success(function(data) {
+                $scope.usersList = data;
+                service.people =  data;
+            });
+        return service.people;
+    };
+
+    return service;
+};
 angular.module('myApp.divide', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -10,8 +24,7 @@ angular.module('myApp.divide', ['ngRoute'])
     }])
 
     .controller('divideCtrl', ['$scope', 'divideFactory', function ($scope, divideFactory) {
-        $scope.usersList = divideFactory.getData;
-
+        divideFactory.getPeople($scope);
         $scope.master = {};
         $scope.selection = {};
 
@@ -33,14 +46,4 @@ angular.module('myApp.divide', ['ngRoute'])
     }])
 
 
-    .factory('divideFactory', function () {
-        return {
-            getData: [
-                {id: 0, user_name: "Monika"},
-                {id: 1, user_name: "Kuba"},
-                {id: 2, user_name: "Mikołaj"},
-                {id: 3, user_name: "Przemek"},
-                {id: 4, user_name: "John"}
-            ]
-        };
-    });
+    .factory('divideFactory', ['$http',usersService ]);
