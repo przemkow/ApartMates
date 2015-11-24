@@ -4,23 +4,6 @@
 
     <button type="submit" ng-click="newExpense = true" class="btn btn-default">New expense</button>
 
-    <!-- <ul class="list-group">
-         <li class="list-group-item" ng-repeat="exp in awaiting_duties | orderBy:'deadline':reverse"
-             ng-class="{'list-group-item-warning class smoothColor ' : duty.status === 1, 'list-group-item-danger' : duty.status === -1,
-             'list-group-item-success animated bounceOutLeft' : duty.status === 2}" ng-hide="duty.status === 2">
-             <div class="row rowView">
-                 <div class="col-xs-1">
-                     <time datetime={{duty.deadline}} class="icon">
-                         <em>{{duty.deadline | date: 'EEEE'}}</em>
-                         <strong>{{duty.deadline | date: 'MMMM'}}</strong>
-                         <span>{{duty.deadline | date: 'dd'}}</span>
-                     </time>
-                 </div>
-                 </div>
-             </li>
-         </ul>
- -->
-
     <form role="form" ng-show="newExpense">
         <div class="form-group">
             <label for="user">Who spent the money:</label>
@@ -46,13 +29,13 @@
         <label class="control-label">Select all</label>
 
         <div class="controls">
-            <label class="checkbox inline" ng-repeat="sharedUser in usersList">
+            <div class="checkbox inline" ng-repeat="sharedUser in usersList">
                 <input type="checkbox" value="{{sharedUser.id}}" ng-model="expense.usersList[sharedUser.id]">
                 {{sharedUser.user_name}}
-            </label>
+            </div>
         </div>
 
-        <button type="submit" ng-click="update(expense)" class="btn btn-default">Submit</button>
+        <button type="submit" ng-click="save()" class="btn btn-default">Submit</button>
     </form>
 </div>
 <div class="col-lg-1"/>

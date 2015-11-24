@@ -2,7 +2,6 @@
 
 angular.module('myApp.announcement', ['ngRoute'])
 
-
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/announcement', {
             templateUrl: 'announcement/announcement.html',
@@ -14,6 +13,8 @@ angular.module('myApp.announcement', ['ngRoute'])
         usersService.getPeople($scope);
 
         var checked;
+        $scope.selection = {};
+        $scope.announce = {usersList: {}};
 
         $scope.updateAll = function (announce) {
             checked = $scope.announce.all;

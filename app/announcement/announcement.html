@@ -3,6 +3,31 @@
 
     <button type="submit" ng-click="newAnnounce = true" class="btn btn-default">New announcement</button>
 
+    <!--
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="ann in announcesList | orderBy:'date':reverse">
+            <div class="row rowView">
+                <div class="col-md-1">
+                    <time datetime={{ann.eventDate}} class="icon">
+                        <em>{{ann.eventDate | date: 'EEEE'}}</em>
+                        <strong>{{ann.eventDate | date: 'MMMM'}}</strong>
+                        <span>{{ann.eventDate | date: 'dd'}}</span>
+                    </time>
+                </div>
+                <div class="col-md-3">
+                    <span>{{ann.user_name}} </span>
+                </div>
+                <div class="col-md-5">
+                    <span>{{ann.desc}} </span>
+                </div>
+                <div class="col-md-2">
+                    <span class="dateStamp"> posted</br>{{dayCounter(ann.date)}} </span>
+                </div>
+            </div>
+        </li>
+    </ul>
+    -->
+
     <form ng-show="newAnnounce" novalidate name="newAnnouncementForm">
         <div class="form-group">
             <label for="text">The announcement:</label>
@@ -20,12 +45,12 @@
             <label class="control-label">Select all</label>
         </div>
         <div class="form-group">
-            <label class="checkbox" ng-repeat="sharedUser in usersList">
+            <div class="checkbox" ng-repeat="sharedUser in usersList">
                 <input type="checkbox" value="{{sharedUser.id}}" ng-model="announce.usersList[sharedUser.id]">
                 {{sharedUser.user_name}}
-            </label>
+            </div>
         </div>
-        <button type="button" data-ng-click="save()" class="btn btn-default">Save</button>
+        <button type="button" ng-click="save()" class="btn btn-default">Save</button>
     </form>
 </div>
 <div class="col-lg-1"/>

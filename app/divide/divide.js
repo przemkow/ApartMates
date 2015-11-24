@@ -28,6 +28,7 @@ angular.module('myApp.divide', ['ngRoute'])
         divideFactory.getPeople($scope);
         $scope.master = {};
         $scope.selection = {};
+        $scope.expense = {usersList: {}};
 
         var checked;
 
