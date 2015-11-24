@@ -5,12 +5,7 @@ var usersService = function ($http) {
     var service = {};
     service.people = {};
     service.getPeople = function ($scope) {
-        $http.get('divide/people.json')
-            .success(function (data) {
-                $scope.usersList = data;
-                service.people = data;
-            });
-        return service.people;
+        return $http.get('divide/people.json')
     };
 
     return service;
@@ -25,7 +20,10 @@ angular.module('myApp.divide', ['ngRoute'])
     }])
 
     .controller('divideCtrl', ['$scope', 'divideFactory', function ($scope, divideFactory) {
-        divideFactory.getPeople($scope);
+        divideFactory.getPeople().then(function(response){
+            $scope.usersList = response.data;
+        });
+
         $scope.master = {};
         $scope.selection = {};
         $scope.expense = {usersList: {}};

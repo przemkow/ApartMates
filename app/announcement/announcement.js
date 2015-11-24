@@ -9,9 +9,10 @@ angular.module('myApp.announcement', ['ngRoute'])
         });
     }])
 
-    .controller('announcementCtrl', ['$scope', 'announcementFactory', function ($scope, usersService) {
-        usersService.getPeople($scope);
-
+    .controller('announcementCtrl', ['$scope', 'announcementFactory', function ($scope, announcementFactory) {
+        announcementFactory.getPeople().then(function(response){
+            $scope.usersList = response.data;
+        });
         var checked;
         $scope.selection = {};
         $scope.announce = {usersList: {}};

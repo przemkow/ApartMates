@@ -3,12 +3,8 @@
 var accomplishFactory = function ($http) {
     var service = {};
 
-    service.getDuties = function ($scope) {
-        $http.get('accomplish/accomplishData.json')
-            .success(function (data) {
-                $scope.awaiting_duties = data;
-            });
-        return service;
+    service.getDuties = function() {
+        return $http.get('accomplish/accomplishData.json');
     };
 
     return service;
@@ -25,7 +21,9 @@ angular.module('myApp.accomplish', ['ngRoute'])
 
     .controller('accomplishCtrl', ['$scope', 'accomplishFactory', function ($scope, accomplishFactory) {
 
-        accomplishFactory.getDuties($scope);
+            accomplishFactory.getDuties().then(function(response){
+            $scope.awaiting_duties = response.data;
+        });
 
         $scope.accomplish = function (id) {
             $scope.awaiting_duties[id].status = 1;

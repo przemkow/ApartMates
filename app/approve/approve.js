@@ -3,14 +3,8 @@
 var approveService = function($http){
 
   var service = {};
-  service.awaiting_duties = {}
-  service.getDuties = function($scope) {
-    $http.get('approve/approveData.json')
-        .success(function(data) {
-          $scope.awaiting_duties = data;
-          service.awaiting_duties =  data;
-        });
-    return service.awaiting_duties;
+  service.getDuties = function() {
+    return $http.get('approve/approveData.json');
   };
 
   return service;
@@ -26,7 +20,11 @@ angular.module('myApp.approve', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
 }])
 
 .controller('approve', ['$scope', 'approveFactory', function($scope, approveFactory) {
-  approveFactory.getDuties($scope);
+
+  approveFactory.getDuties().then(function(response){
+    $scope.awaiting_duties = response.data;
+  });
+
   $scope.approve = function(id){
     $scope.awaiting_duties[id].status = 2;
   };
