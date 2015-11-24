@@ -12,7 +12,7 @@ angular.module('myApp.approve', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
 .controller('approve', ['$scope', 'approveFactory', function($scope, approveFactory) {
   $scope.awaiting_duties = approveFactory.getData;
   $scope.approve = function(id){
-    $scope.awaiting_duties[id].status = 1;
+    $scope.awaiting_duties[id].status = 2;
   };
 
   $scope.reject = function(id, message){
@@ -21,6 +21,11 @@ angular.module('myApp.approve', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
   }
 }])
 
+//  STATUS LIST:
+// -1 = Rejected
+// 0 = newAwaitingDuty
+// 1 = doneWaitingForAccept
+// 2 = Accepted
 .factory('approveFactory', function() {
   return {
     getData :[

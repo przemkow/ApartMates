@@ -22,10 +22,19 @@ body {
     font-size: 1.5em; }
 
 @media (min-width: 768px) {
-  .view-animate.ng-enter, .view-animate.ng-leave {
-    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.5s;
+  .view-animate.ng-enter {
+    animation: 1s fadeInRight ease;
     display: block;
-    width: 100%;
+    width: 97.5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .view-animate.ng-leave {
+    animation: 1s fadeOutLeft ease;
+    display: block;
+    width: 97.5%;
     position: absolute;
     top: 0;
     left: 0;
@@ -34,8 +43,6 @@ body {
   .view-animate.ng-enter {
     left: 100%; }
   .view-animate.ng-enter.ng-enter-active {
-    left: 1em; }
-  .view-animate.ng-leave.ng-leave-active {
-    left: -100%; } }
+    left: 1em; } }
 
 /*# sourceMappingURL=app.css.map */
