@@ -15,25 +15,39 @@ angular.module('myApp.divide', ['ngRoute'])
         $scope.master = {};
         $scope.selection = {};
 
-        $scope.update = function(expense) {
-            $scope.master = angular.copy(expense); //tutaj można zapisać dane z formularza
+        var checked;
+
+        $scope.updateAll = function (expense) {
+            checked = $scope.expense.all;
+            $scope.usersList.forEach(function (sharedUser) {
+                $scope.expense.usersList[sharedUser.id] = checked;
+            });
         };
 
-        $scope.toggleAll = function() {
-            var toggleStatus = $scope.isAllSelected;
-            angular.forEach($scope.usersList, function(item){
-                item.selected = toggleStatus; });
-        };
+        $scope.save = function () {
 
-        $scope.optionToggled = function(){
-            $scope.isAllSelected = $scope.usersList.every(function(item){
-                return item.selected; })
-
-        };
+        }
     }])
 
 
     .factory('divideFactory', function () {
+
+        var expensesList = [{
+            id: 0,
+            user: "Monika",
+            desc: "milk and honey",
+            total: 12,
+            oneShare: 4
+        },
+            {
+                id: 1,
+                user: "Przemek",
+                desc: "domestos",
+                total: 7,
+                oneShare: 1.3
+
+            }];
+
         return {
             getData: [
                 {id: 0, user_name: "Monika"},

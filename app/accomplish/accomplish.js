@@ -10,9 +10,11 @@ angular.module('myApp.accomplish', ['ngRoute'])
     }])
 
     .controller('accomplishCtrl', ['$scope', 'accomplishFactory', function ($scope, accomplishFactory) {
+
         $scope.awaiting_duties = accomplishFactory.getData;
         $scope.accomplish = function (id) {
             $scope.awaiting_duties[id].status = 1;
+            $scope.complaintsList = false;
         };
 
         $scope.dayCounter = function (date) {
