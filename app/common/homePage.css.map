@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "homePage.css",
+	"sources": [
+		"style/homePage.scss"
+	],
+	"mappings": "AAAA,SAAS,CACR,SAAS,CAAA;EACR,GAAG,EAAE,GAAI,GACT;;AAHF,SAAS,CAIR,QAAQ,CAAA;EACP,OAAO,EAAE,IAAK;EACd,WAAW,EAAE,MAAO;EACpB,MAAM,EAAE,IAAK,GACb",
+	"names": []
+}

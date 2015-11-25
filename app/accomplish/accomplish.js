@@ -21,7 +21,7 @@ angular.module('myApp.accomplish', ['ngRoute'])
 
     .controller('accomplishCtrl', ['$scope', 'accomplishFactory', function ($scope, accomplishFactory) {
 
-            accomplishFactory.getDuties().then(function(response){
+        accomplishFactory.getDuties().then(function(response){
             $scope.awaiting_duties = response.data;
         });
 

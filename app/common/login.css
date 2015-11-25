@@ -3,9 +3,7 @@
   font-family: 'Roboto', sans-serif; }
 
 #login-modal .modal-dialog {
-  width: 450px;
-  max-width: 95%;
-}
+  width: 450px; }
 
 #login-modal input[type=text], input[type=password] {
   margin-top: 10px; }
@@ -14,6 +12,7 @@
 #div-lost-msg,
 #div-register-msg {
   border: 1px solid #dadfe1;
+  height: 30px;
   line-height: 28px;
   transition: all ease-in-out 500ms; }
 
@@ -52,9 +51,8 @@
 
 #img_logo {
   margin: 30px;
-  max-height: 80%;
-  max-width: 80%;
-}
+  max-height: 250px;
+  max-width: 250px; }
 
 /* #########################################
    #    override the bootstrap configs     #
