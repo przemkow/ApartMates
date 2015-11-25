@@ -1,17 +1,5 @@
 'use strict';
 
-var announcementService = function ($http) {
-
-    var service = {};
-    service.announcements = {};
-    service.getAnnouncements = function ($scope) {
-        return $http.get('announcement/announcementData.json')
-    };
-
-    return service;
-};
-
-
 angular.module('myApp.announcement', ['ngRoute', 'ui.select2'])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -21,9 +9,13 @@ angular.module('myApp.announcement', ['ngRoute', 'ui.select2'])
         });
     }])
 
-    .controller('announcementCtrl', ['$scope', 'announcementFactory', function ($scope, announcementFactory) {
-        announcementFactory.getPeople().then(function(response){
+    .controller('announcementCtrl', ['$scope', 'announcementFactory', 'userFactory', function ($scope, announcementFactory, userFactory) {
+        userFactory.getPeople().then(function(response){
             $scope.usersList = response.data;
+        });
+
+        announcementFactory.getAnnouncements().then(function(response){
+            $scope.announcesList = response.data;
         });
 
         var checked;
@@ -57,27 +49,15 @@ angular.module('myApp.announcement', ['ngRoute', 'ui.select2'])
             $scope.newAnnounce = false;
             $scope.btnAddAnn = false;
         };
-
-        $scope.announcesList = [
-            {
-                "id": 0,
-                "user_name": "Monika",
-                "desc": "There will be no water on Monday!!",
-                "eventDate" : "2015-12-07",
-                "date" : "2015-11-24"
-            },
-            {
-                "id": 1,
-                "user_name": "Mikolaj",
-                "desc": "studying today, don't be loud",
-                "eventDate" : "2015-12-01",
-                "date" : "2015-11-22"
-            }
-        ];
-
-
     }])
 
 
-    .factory('announcementFactory', ['$http', usersService]);
+    .factory('announcementFactory', ['$http', function($http){
+        var factory = {};
+        factory.announcements = {};
+        factory.getAnnouncements = function () {
+            return $http.get('announcement/announcementData.json')
+        };
 
+        return factory;
+    }]);

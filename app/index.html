@@ -31,19 +31,17 @@
 
 </head>
 <body ng-controller="userCtrl as user">
-
 <ng-include src="'./user/loginModal.html'"></ng-include>
-
 <div id="wrapper">
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <span class="glyphicon glyphicon-menu-left menu-toggle visible-xs" aria-hidden="true"></span>
       <li class="sidebar-user-picture">
-        <div class="circular"><img data-toggle="modal" data-target="#login-modal" src="{{user.user.image}}"/>
+        <div class="circular"><img data-toggle="modal" data-target="#login-modal" src="{{currentUser.image}}"/>
         </div>
       </li>
-      <li class="sidebar-user-name"><a href="#homePage">{{ user.user.name }} {{user.user.lastName}}</a></li>
+      <li class="sidebar-user-name"><a href="#homePage">{{ currentUser.name }} {{currentUser.lastName}}</a></li>
       </br>
       <hr>
       <li><a href="#approve"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Waiting for
@@ -104,7 +102,7 @@
 <script src="common/route.js"></script>
 <script src="homePage/homePage.js"></script>
 <script src="user/jQueryLogin.js"></script>
-<script src="user/userController.js"></script>
+<script src="user/user.js"></script>
 <script src="approve/approve.js"></script>
 <script src="accomplish/accomplish.js"></script>
 <script src="divide/divide.js"></script>

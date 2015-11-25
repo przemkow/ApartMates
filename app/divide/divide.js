@@ -1,16 +1,5 @@
 'use strict';
 
-var usersService = function ($http) {
-
-    var service = {};
-    service.people = {};
-    service.getPeople = function ($scope) {
-        return $http.get('divide/people.json')
-    };
-
-    return service;
-};
-
 angular.module('myApp.divide', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -20,9 +9,14 @@ angular.module('myApp.divide', ['ngRoute'])
         });
     }])
 
-    .controller('divideCtrl', ['$scope', 'divideFactory', function ($scope, divideFactory) {
-        divideFactory.getPeople().then(function(response){
+    .controller('divideCtrl', ['$scope', 'divideFactory', 'userFactory', function ($scope, divideFactory, userFactory) {
+        userFactory.getPeople().then(function(response){
             $scope.usersList = response.data;
+        });
+
+        divideFactory.getDebts().then(function(response){
+            console.log(response);
+            $scope.debtsList = response.data;
         });
 
         $scope.selection = {};
@@ -49,35 +43,15 @@ angular.module('myApp.divide', ['ngRoute'])
             $scope.btnAddExp = false;
         };
 
-        //===========  change this!!! ==================================
-
-        $scope.currentUser = "Monika";
-
-        $scope.debtsList = [
-            {
-                "id": 0,
-                "user_name": "Mikolaj",
-                "users_creditor": "Monika",
-                "amount": 3,
-                "date" : "2015-11-24"
-            },
-            {
-                "id": 1,
-                "user_name": "Monika",
-                "users_creditor": "Kuba",
-                "amount": 12,
-                "date" : "2015-11-24"
-            },
-            {
-                "id": 2,
-                "user_name": "Przemek",
-                "users_creditor": "Monika",
-                "amount": 4.5,
-                "date" : "2015-11-24"
-            }
-        ];
-
     }])
 
-    .factory('divideFactory', ['$http', usersService]);
+    .factory('divideFactory', ['$http', function($http){
+        var factory = {};
+        factory.debts = {};
+        factory.getDebts = function () {
+            return $http.get('divide/debts.json')
+        };
+
+        return factory;
+    }]);
 

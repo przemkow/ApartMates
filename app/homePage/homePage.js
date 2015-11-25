@@ -11,7 +11,7 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
 
 .controller('homePageCtrl', ['$scope', 'homePageFactory',function($scope, homePageFactory) {
   $scope.duties;
-  var formatted_duties = [];
+  $scope.formatted_duties = [];
   homePageFactory.getDuties().then(function(response){
     $scope.duties = response.data;
     angular.forEach($scope.duties, function(value, key) {
@@ -20,7 +20,7 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
         start: value.deadline
       };
       this.push(temp_object);
-    }, formatted_duties);
+    }, $scope.formatted_duties);
 
 
     //custom filter
@@ -38,7 +38,7 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
 
 
   $scope.eventSources = [{
-    events: formatted_duties
+    events: $scope.formatted_duties
   }
   ];
 
@@ -65,3 +65,4 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
 
   return service;
 }])
+

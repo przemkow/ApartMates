@@ -51,7 +51,7 @@
         <div class="col-lg-5">
             <h2>You owe</h2>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="debt in filtredSet = (debtsList | filter: {'user_name':  currentUser}: true) | orderBy:'date':reverse">
+                <li class="list-group-item" ng-repeat="debt in filtredSet = (debtsList | filter: {'user_name':  currentUser.name}: true) | orderBy:'date':reverse">
                     <div class="row rowCenter">
                         <div class="col-md-2">
                             <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal"
@@ -87,7 +87,7 @@
         <div class="col-lg-5">
             <h2>Owe to you</h2>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="debt in filtredSet2 = (debtsList | filter: {'users_creditor':  currentUser}: true) | orderBy:'date':reverse">
+                <li class="list-group-item" ng-repeat="debt in filtredSet2 = (debtsList | filter: {'users_creditor':  currentUser.name}: true) | orderBy:'date':reverse">
                     <div class="row rowCenter">
                         <div class="col-md-2">
                             <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal"
