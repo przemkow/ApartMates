@@ -1,12 +1,12 @@
 <div class="col-lg-1"/>
 <div class="col-lg-10 accomplish" ng-app="myApp.accomplish" ng-controller="accomplishCtrl as accomplish">
     <h1>Pending duties</h1>
-    </time>
+
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="duty in awaiting_duties | orderBy:'deadline':reverse"
             ng-class="{'list-group-item-warning class smoothColor ' : duty.status === 1, 'list-group-item-danger' : duty.status === -1,
             'list-group-item-success animated bounceOutLeft' : duty.status === 2}" ng-hide="duty.status === 2">
-            <div class="row rowView">
+            <div class="row rowCenter">
                 <div class="col-xs-1">
                     <time datetime={{duty.deadline}} class="icon">
                         <em>{{duty.deadline | date: 'EEEE'}}</em>
@@ -37,7 +37,7 @@
                 <ul class="list-group">
                     <li class="list-group-item"
                         ng-repeat="rejectInfo in duty.reject_info | orderBy:'date':reverse">
-                        <div class="row rowView">
+                        <div class="row rowCenter">
                             <div class="col-md-1"/>
                             <div class="col-md-1">
                                 <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal" src="{{rejectInfo.image}}"/>

@@ -10,6 +10,7 @@ var usersService = function ($http) {
 
     return service;
 };
+
 angular.module('myApp.divide', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -24,7 +25,6 @@ angular.module('myApp.divide', ['ngRoute'])
             $scope.usersList = response.data;
         });
 
-        $scope.master = {};
         $scope.selection = {};
         $scope.expense = {usersList: {}};
 
@@ -38,7 +38,41 @@ angular.module('myApp.divide', ['ngRoute'])
         };
 
         $scope.save = function () {
-        }
+            $scope.expense = {};
+            $scope.expense = false;
+            $scope.btnAddExp = false;
+        };
+
+        $scope.cancel = function () {
+            $scope.expense = {};
+            $scope.newExpense = false;
+            $scope.btnAddExp = false;
+        };
+
+        $scope.debtsList = [
+            {
+                "id": 0,
+                "user_name": "Monika",
+                "users_creditor": "Mikolaj",
+                "amount": 3,
+                "date" : "2015-11-24"
+            },
+            {
+                "id": 1,
+                "user_name": "Monika",
+                "users_creditor": "Kuba",
+                "amount": 3,
+                "date" : "2015-11-24"
+            },
+            {
+                "id": 2,
+                "user_name": "Przemek",
+                "users_creditor": "Monika",
+                "amount": 3,
+                "date" : "2015-11-24"
+            }
+        ];
+
     }])
 
     .factory('divideFactory', ['$http', usersService]);

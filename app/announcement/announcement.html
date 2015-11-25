@@ -1,12 +1,40 @@
 <div class="col-lg-1"/>
-<div class="col-lg-10 divide" ng-app="myApp.announcement" ng-controller="announcementCtrl">
+<div class="col-lg-10 announcement" ng-app="myApp.announcement" ng-controller="announcementCtrl">
 
-    <button type="submit" ng-click="newAnnounce = true" class="btn btn-default">New announcement</button>
+    <div class="topRow">
+        <span>Current announcements</span>
+        <button ng-click="newAnnounce = true; btnAddAnn = true" ng-hide="btnAddAnn" class="btn btn-success"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></button>
+    </div>
 
-    <!--
+    <form ng-show="newAnnounce" novalidate name="newAnnouncementForm" class="form well">
+        <div class="form-group">
+            <label for="text">The announcement:</label>
+            <textarea class="form-control" id="text" ng-model="announce.desc"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="date">Select announcement date:</label>
+            <input type="date" class="form-control" ng-model="announce.eventDate" id="date">
+        </div>
+
+        <label>Select mates to share announce with:</label>
+
+        <div>
+            <input type="checkbox" ng-model="announce.all" ng-change="updateAll()">
+            <label class="control-label">Select all</label>
+        </div>
+        <div class="form-group">
+            <div class="checkbox" ng-repeat="sharedUser in usersList">
+                <input type="checkbox" value="{{sharedUser.id}}" ng-model="announce.usersList[sharedUser.id]">
+                {{sharedUser.user_name}}
+            </div>
+        </div>
+        <button type="button" ng-click="save()" class="btn btn-success">Save</button>
+        <button type="button" ng-click="cancel()" class="btn btn-danger">Cancel</button>
+    </form>
+
     <ul class="list-group">
-        <li class="list-group-item" ng-repeat="ann in announcesList | orderBy:'date':reverse">
-            <div class="row rowView">
+        <li class="list-group-item" ng-repeat="ann in announcesList | orderBy:'eventDate':reverse">
+            <div class="row rowCenter">
                 <div class="col-md-1">
                     <time datetime={{ann.eventDate}} class="icon">
                         <em>{{ann.eventDate | date: 'EEEE'}}</em>
@@ -17,40 +45,15 @@
                 <div class="col-md-3">
                     <span>{{ann.user_name}} </span>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-7">
                     <span>{{ann.desc}} </span>
                 </div>
-                <div class="col-md-2">
-                    <span class="dateStamp"> posted</br>{{dayCounter(ann.date)}} </span>
+                <div class="col-md-1">
+                    <span class="dateStamp"> posted</br>{{ann.date}} </span>
                 </div>
             </div>
         </li>
     </ul>
-    -->
 
-    <form ng-show="newAnnounce" novalidate name="newAnnouncementForm">
-        <div class="form-group">
-            <label for="text">The announcement:</label>
-            <textarea class="form-control" id="text" ng-model="announce.desc"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="date">Select announcement date:</label>
-            <input type="date" class="form-control" ng-model="announce.date" id="date">
-        </div>
-
-        <label>Select mates to share announce with:</label>
-
-        <div>
-            <input type="checkbox" ng-model="announce.all" ng-change="updateAll(announce)">
-            <label class="control-label">Select all</label>
-        </div>
-        <div class="form-group">
-            <div class="checkbox" ng-repeat="sharedUser in usersList">
-                <input type="checkbox" value="{{sharedUser.id}}" ng-model="announce.usersList[sharedUser.id]">
-                {{sharedUser.user_name}}
-            </div>
-        </div>
-        <button type="button" ng-click="save()" class="btn btn-default">Save</button>
-    </form>
 </div>
 <div class="col-lg-1"/>

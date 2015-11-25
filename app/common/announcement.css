@@ -1,0 +1,24 @@
+.topRow{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.topRow button{
+    float: right;
+}
+
+.topRow span{
+    font-size: 1.8em;
+}
+
+.announcement .ng-hide-add {
+    animation: 0.2s slideOutRight ease;
+}
+
+.announcement .ng-hide-remove {
+    animation: 1s bounceInDown ease;
+}
+
+.announcement .ng-enter {
+    animation: 1s slideInRight ease;
+}

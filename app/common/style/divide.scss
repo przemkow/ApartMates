@@ -1,3 +1,25 @@
 textarea{
   height: 100px !important;
 }
+
+.divide .ng-hide-add {
+  animation: 0.2s slideOutRight ease;
+}
+
+.divide .ng-hide-remove {
+  animation: 1s bounceInDown ease;
+}
+
+.divide .ng-enter {
+  animation: 1s slideInRight ease;
+}
+
+.divide .ng-leave {
+  animation: 1s slideInLeft ease;
+}
+
+.divide button{
+  font-weight: 700;
+  font-size: 16px;
+  align-items: center;
+}

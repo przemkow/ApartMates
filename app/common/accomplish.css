@@ -21,7 +21,7 @@
     padding: 0 10px;
 }
 
-.accomplish .rowView {
+.rowCenter {
     display: flex;
     align-items: center;
     height: 56px;
@@ -39,7 +39,7 @@
     animation: 0.5s flipInX ease;
 }
 
-.accomplish .dateStamp {
+.dateStamp {
     font-size: 0.8em;
     position: absolute;
     bottom: -30px;
