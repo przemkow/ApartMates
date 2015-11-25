@@ -10,6 +10,14 @@ angular.module('myApp.users', [])
 
 
 function userController($scope) {
+
+  var guest = {
+    name: "Guest",
+    lastName: "",
+    guest: true,
+    image: "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+  };
+
   $scope.user.credentials = {
     login: '',
     password: ''
@@ -25,6 +33,7 @@ function userController($scope) {
       var user = {
         name: "Monika",
         lastName: "Smith",
+        guest: false,
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Grzegorz_P_Pawlak1.jpg/160px-Grzegorz_P_Pawlak1.jpg"
       };
       $scope.currentUser = user;
@@ -35,14 +44,17 @@ function userController($scope) {
           $('#login-modal').modal('hide');
         }, 1200);
     }
+
+    $scope.logout = function () {
+      $scope.currentUser = guest;
+      $('.circular img').click()
+    }
   };
 
-
-  $scope.currentUser={
-    name: "Guest",
-    lastName: "",
-    image: "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
-  };
+  $scope.currentUser = guest;
+  if($scope.currentUser == guest){
+    $('.circular img').click();
+  }
 }
 
 
