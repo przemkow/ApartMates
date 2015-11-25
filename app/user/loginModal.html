@@ -1,4 +1,6 @@
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade in " id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+     style="display: block;" ng-if="currentUser.guest">
+
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header" align="center">
@@ -16,12 +18,6 @@
             </div>
             <input id="login_username" ng-model="user.credentials.login" class="form-control" type="text" placeholder="Username" required>
             <input id="login_password" ng-model="user.credentials.password" class="form-control" type="password" placeholder="Password" required>
-
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
-            </div>
           </div>
           <div class="modal-footer">
             <div>

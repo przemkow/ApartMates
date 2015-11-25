@@ -112,14 +112,14 @@
 <script src="components/version/interpolate-filter.js"></script>
 <script type="text/javascript" src="bower_components/select2/select2.js"></script>
 <script type="text/javascript" src="bower_components/angular-ui-select2/src/select2.js"></script>
-
-
 <script>
   $(".menu-toggle").click(function (e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
   });
 </script>
+
+<div ng-class="currentUser.guest? 'modal-backdrop fade in' : 'none'"></div>
 
 <!--ONLY FOR DEVELOPMENT-->
 <script src="//localhost:35729/livereload.js"></script>
