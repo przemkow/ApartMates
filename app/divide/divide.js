@@ -49,11 +49,15 @@ angular.module('myApp.divide', ['ngRoute'])
             $scope.btnAddExp = false;
         };
 
+        //===========  change this!!! ==================================
+
+        $scope.currentUser = "Monika";
+
         $scope.debtsList = [
             {
                 "id": 0,
-                "user_name": "Monika",
-                "users_creditor": "Mikolaj",
+                "user_name": "Mikolaj",
+                "users_creditor": "Monika",
                 "amount": 3,
                 "date" : "2015-11-24"
             },
@@ -61,14 +65,14 @@ angular.module('myApp.divide', ['ngRoute'])
                 "id": 1,
                 "user_name": "Monika",
                 "users_creditor": "Kuba",
-                "amount": 3,
+                "amount": 12,
                 "date" : "2015-11-24"
             },
             {
                 "id": 2,
                 "user_name": "Przemek",
                 "users_creditor": "Monika",
-                "amount": 3,
+                "amount": 4.5,
                 "date" : "2015-11-24"
             }
         ];

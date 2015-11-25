@@ -11,8 +11,16 @@
     font-size: 1.8em;
 }
 
+.announcement .btn.ng-hide-add {
+    animation: 0.6s fadeOut ease;
+}
+
+.announcement .btn.ng-hide-remove {
+    animation: 1s bounceInDown ease;
+}
+
 .announcement .ng-hide-add {
-    animation: 0.2s slideOutRight ease;
+    animation: 0.6s flipOutX ease;
 }
 
 .announcement .ng-hide-remove {
@@ -20,5 +28,5 @@
 }
 
 .announcement .ng-enter {
-    animation: 1s slideInRight ease;
+    animation: 1.2s slideInRight ease;
 }

@@ -37,6 +37,10 @@ angular.module('myApp.announcement', ['ngRoute', 'ui.select2'])
             });
         };
 
+        $scope.dayCounter = function (date) {
+            return moment(date, "YYYY-MM-DD").fromNow();
+        }
+
         $scope.save = function () {
 
             $scope.announce.date = new Date(); //momentjs zmienic date

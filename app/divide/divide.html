@@ -1,48 +1,126 @@
-<div class="col-lg-1"/>
-<div class="row">
-    <div class="col-lg-10 divide" ng-app="myApp.divide" ng-controller="divideCtrl as divide">
+<div class="divide" ng-app="myApp.divide" ng-controller="divideCtrl as divide">
+    <div class="col-lg-1"/>
+    <div class="row">
+        <div class="col-lg-10">
 
-        <div class="topRow">
+            <div class="topRow">
 
-            <button ng-click="newExpense = true; btnAddExp = true" ng-hide="btnAddExp" class="btn btn-success"><i
-                    class="glyphicon glyphicon-plus" aria-hidden="true"></i></button>
-        </div>
-
-        <form role="form" ng-show="newExpense" class="well">
-            <div class="form-group">
-                <label for="user">Who spent the money:</label>
-                <select class="form-control" id="user" ng-model="expense.whose"
-                        ng-options="opt as opt.user_name for opt in usersList"
-                        ng-init="expense.whose =user.user"></select>
-            </div>
-            <div class="form-group">
-                <label for="amount">How much:</label>
-                <input type="number" class="form-control" ng-model="expense.amount" id="amount"
-                       placeholder="Enter the amount in euros">
-            </div>
-            <div class="form-group">
-                <label for="type">For what:</label>
-                <input type="text" class="form-control" ng-model="expense.desc" id="type" placeholder="For what">
-            </div>
-            <div class="form-group">
-                <label for="date">Select announcement date:</label>
-                <input type="date" class="form-control" ng-model="expense.date" id="date">
+                <button ng-click="newExpense = true; btnAddExp = true" ng-hide="btnAddExp" class="btn btn-default"><i
+                        class="glyphicon glyphicon-plus" aria-hidden="true"></i> New expense
+                </button>
             </div>
 
-            <label>Select mates to share expenses with:</label>
-            <input type="checkbox" ng-model="expense.all" ng-change="updateAll(announce)">
-            <label class="control-label">Select all</label>
-
-            <div class="controls">
-                <div class="checkbox inline" ng-repeat="sharedUser in usersList">
-                    <input type="checkbox" value="{{sharedUser.id}}" ng-model="expense.usersList[sharedUser.id]">
-                    {{sharedUser.user_name}}
+            <form role="form" ng-show="newExpense" class="well">
+                <div class="form-group">
+                    <label for="user">Who spent the money:</label>
+                    <select class="form-control" id="user" ng-model="expense.whose"
+                            ng-options="opt as opt.user_name for opt in usersList"
+                            ng-init="expense.whose =user.user"></select>
                 </div>
-            </div>
-            <button type="button" ng-click="save()" class="btn btn-success">Save</button>
-            <button type="button" ng-click="cancel()" class="btn btn-danger">Cancel</button>
-        </form>
-    </div>
-</div>
+                <div class="form-group">
+                    <label for="amount">How much:</label>
+                    <input type="number" class="form-control" ng-model="expense.amount" id="amount"
+                           placeholder="Enter the amount in euros">
+                </div>
+                <div class="form-group">
+                    <label for="type">For what:</label>
+                    <input type="text" class="form-control" ng-model="expense.desc" id="type" placeholder="For what">
+                </div>
+                <div class="form-group">
+                    <label for="date">Select announcement date:</label>
+                    <input type="date" class="form-control" ng-model="expense.date" id="date">
+                </div>
 
-<div class="col-lg-1"/>
+                <label>Select mates to share expenses with:</label>
+                <input type="checkbox" ng-model="expense.all" ng-change="updateAll(announce)">
+                <label class="control-label">Select all</label>
+
+                <div class="controls">
+                    <div class="checkbox inline" ng-repeat="sharedUser in usersList">
+                        <input type="checkbox" value="{{sharedUser.id}}" ng-model="expense.usersList[sharedUser.id]">
+                        {{sharedUser.user_name}}
+                    </div>
+                </div>
+                <button type="button" ng-click="save()" class="btn btn-success">Save</button>
+                <button type="button" ng-click="cancel()" class="btn btn-danger">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1"/>
+        <div class="col-lg-5">
+            <h2>You owe</h2>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="debt in filtredSet = (debtsList | filter: {'user_name':  currentUser}: true) | orderBy:'date':reverse">
+                    <div class="row rowCenter">
+                        <div class="col-md-2">
+                            <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal"
+                                                            src="https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"/>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <span>{{debt.users_creditor}} </span>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="money plus">{{debt.amount}} €</span>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </li>
+                <div ng-if="filtredSet.length == 0">
+                    <li class="backInfo rowCenter">
+                        <div class="col-md-3"/>
+                        <div class="col-md-5">
+                            <span>:)</span>
+                        </div>
+                    </li>
+                    <li class="backInfo rowCenter">
+                        <div class="col-md-3"/>
+                        <div class="col-md-5">
+                            <p>You don't have any debts</p>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div class="col-lg-5">
+            <h2>Owe to you</h2>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="debt in filtredSet2 = (debtsList | filter: {'users_creditor':  currentUser}: true) | orderBy:'date':reverse">
+                    <div class="row rowCenter">
+                        <div class="col-md-2">
+                            <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal"
+                                                            src="https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"/>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <span>{{debt.user_name}} </span>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="money minus">{{debt.amount}} €</span>
+                        </div>
+                        <div class="col-md-1">
+                        </div>
+                    </div>
+                </li>
+                <div ng-if="filtredSet2.length == 0">
+                    <li class="backInfo rowCenter">
+                        <div class="col-md-3"/>
+                        <div class="col-md-5">
+                            <span>;)</span>
+                        </div>
+                    </li>
+                    <li class="backInfo rowCenter">
+                        <div class="col-md-3"/>
+                        <div class="col-md-5">
+                            <p>You don't have any debtors</p>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-lg-1"/>
+</div>

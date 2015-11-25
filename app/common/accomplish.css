@@ -47,7 +47,7 @@
     line-height: normal;
 }
 
-.accomplish .smallCircular {
+.smallCircular {
     border-radius: 50%;
     overflow: hidden;
     width: 3em;

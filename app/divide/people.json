@@ -1,5 +1,27 @@
-[{"id": 0, "user_name": "Monika"},
-{"id": 1, "user_name": "Kuba"},
-{"id": 2, "user_name": "Mikołaj"},
-{"id": 3, "user_name": "Przemek"},
-{"id": 4, "user_name": "John"}]
+[
+  {
+    "id": 0,
+    "user_name": "Monika",
+    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+  },
+  {
+    "id": 1,
+    "user_name": "Kuba",
+    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+  },
+  {
+    "id": 2,
+    "user_name": "Mikołaj",
+    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+  },
+  {
+    "id": 3,
+    "user_name": "Przemek",
+    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+  },
+  {
+    "id": 4,
+    "user_name": "John",
+    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+  }
+]
