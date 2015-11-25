@@ -15,6 +15,7 @@
     "bootstrap": "~3.3.5",
     "angular-animate": "~1.4.7",
     "angular-bootstrap-confirm": "~0.7.0",
-    "angular-ui-select2": "~0.0.5"
+    "angular-ui-select2": "~0.0.5",
+    "angular-ui-calendar": "~1.0.1"
   }
 }

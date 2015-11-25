@@ -43,7 +43,8 @@ module.exports = function(grunt) {
               'app/common/login.css': 'app/common/style/login.scss',
               'app/common/sidebar.css': 'app/common/style/sidebar.scss',
               'app/common/approve.css': 'app/common/style/approve.scss',
-              'app/common/divide.css': 'app/common/style/divide.scss'
+              'app/common/divide.css': 'app/common/style/divide.scss',
+              'app/common/homePage.css': 'app/common/style/homePage.scss'
             }
           }
         }

@@ -1,2 +1,29 @@
-<p>To je HomePage tak pusty że foka płacze</p>
-<img src="http://c.wrzuta.pl/wi7206/db13f44a000f90664c9764b6">
+<div class="homePage" ng-app="myApp.homePage" ng-controller="homePageCtrl as homePage">
+  <div class="row">
+    <div class="col-sm-2 col-lg-3"/>
+    <div class="col-sm-8 col-lg-6 well calendar">
+      <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-1"/>
+    <div class="col-lg-10">
+      <li class="list-group-item" ng-repeat="duty in duties| filter: afterToday()">
+        <div class="row rowView">
+          <div class="col-xs-1">
+            <time datetime={{duty.deadline}} class="icon">
+              <em>{{duty.deadline | date: 'EEEE'}}</em>
+              <strong>{{duty.deadline | date: 'MMMM'}}</strong>
+              <span>{{duty.deadline | date: 'dd'}}</span>
+            </time>
+          </div>
+          <div class="col-xs-11">
+            <span>{{duty.title}}</span>
+            <span class="pull-right">You need to accomplish that duty {{humanizeTime(duty.deadline)}}</span>
+          </div>
+
+        </div>
+      </li>
+    </div>
+  </div>
+</div>
