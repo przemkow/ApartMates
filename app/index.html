@@ -57,8 +57,7 @@
       <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Add new mate</a></li>
       <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Add new room</a></li>
       <hr class="short">
-      <li><a ng-click="dupa = true"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a></li>
-
+      <li><a ng-show="!currentUser.guest" ng-click="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a></li>
     </ul>
   </div>
   <!-- Page Content -->
