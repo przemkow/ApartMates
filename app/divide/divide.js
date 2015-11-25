@@ -39,7 +39,7 @@ angular.module('myApp.divide', ['ngRoute'])
 
         $scope.save = function () {
             $scope.expense = {};
-            $scope.expense = false;
+            $scope.newExpense = false;
             $scope.btnAddExp = false;
         };
 
