@@ -22,6 +22,9 @@ myApp.config(
         }).when('/room', {
             title: 'Rooms',
             templateUrl: './room/room.html'
+        }).when('/profile', {
+            title: 'Your profile',
+            templateUrl: './user/profile.html'
         }).when('/mates', {
             title: 'Mates',
             templateUrl: './mates/mates.html'

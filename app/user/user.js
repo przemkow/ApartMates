@@ -33,6 +33,7 @@ function userController($scope) {
       var user = {
         name: "Monika",
         lastName: "Kowalska",
+        email: "monika.kowalska@apartmates.com",
         guest: false,
         image: "profile.jpg"
       };

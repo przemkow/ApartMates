@@ -34,6 +34,10 @@ body {
   .navigation-bar {
     width: 85%; } }
 
+.user-profile {
+  height: 30em;
+  width: 30em; }
+
 .myModal {
   position: fixed;
   top: 0;
