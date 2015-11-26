@@ -1,9 +1,9 @@
 [
     {
         "id": 0,
-        "title": "Kitchen cleaning",
+        "title": "Living room cleaning",
         "resp_person": "Monika",
-        "deadline": "2015-11-21",
+        "deadline": "2015-11-27",
         "status": 0,
         "reject_info": ""
     },
@@ -11,53 +11,34 @@
         "id": 1,
         "title": "Bathroom cleaning",
         "resp_person": "Monika",
-        "deadline": "2015-12-01",
+        "deadline": "2015-12-02",
         "status": 0,
-        "reject_info": [
-            {
-                "user_name": "Kuba",
-                "msg": "jest brudno",
-                "date": "2015-11-25",
-                "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
-            },
-            {
-                "user_name": "Mikołaj",
-                "msg": "bo nie",
-                "date": "2015-11-20",
-                "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
-            },
-            {
-                "user_name": "Przemek",
-                "msg": "syf i tyle",
-                "date": "2015-10-20",
-                "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
-            }
-        ]
+        "reject_info": ""
     },
     {
         "id": 2,
-        "title": "Living room cleaning",
+        "title": "Kitchen cleaning",
         "resp_person": "Monika",
         "deadline": "2015-11-16",
         "status": -1,
         "reject_info": [
             {
                 "user_name": "Kuba",
-                "msg": "jest brudno",
-                "date": "2015-11-25",
-                "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+                "msg": "Everything is sticky",
+                "date": "2015-11-19",
+                "image": "https://lh3.googleusercontent.com/-w2_LoeHaLis/VgHfodSD3ZI/AAAAAAAAM4c/LQPxwPYmy9I/w854-h855-no/IMG_0381_2-2.jpg"
             },
             {
                 "user_name": "Mikołaj",
-                "msg": "bo nie",
-                "date": "2015-11-20",
-                "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+                "msg": "Sink is in mess",
+                "date": "2015-11-17",
+                "image": "http://www.michigansantaclausllc.com/images/Michigan-Santa-Claus-LLC.jpg"
             },
             {
                 "user_name": "Przemek",
-                "msg": "syf i tyle",
-                "date": "2015-10-20",
-                "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+                "msg": "really?",
+                "date": "2015-11-20",
+                "image": "https://avatars0.githubusercontent.com/u/10272880?v=3&s=460"
             }
         ]
     }

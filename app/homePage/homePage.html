@@ -9,7 +9,7 @@
     <div class="col-lg-1"/>
     <div class="col-lg-10">
       <h3>Upcoming things:</h3>
-      <li class="list-group-item" ng-repeat="event in calendarEvents| filter: afterToday()">
+      <li class="list-group-item" ng-repeat="event in calendarEvents | orderBy:'start':reverse | filter: afterToday()">
         <div class="row rowView">
           <div class="col-xs-1" >
             <time datetime={{event.start}} class="icon">
@@ -22,7 +22,7 @@
             <span>{{event.title}}</span>
           </div>
           <div class="col-xs-12">
-            <span class="pull-right">You need to accomplish that duty <strong>{{humanizeTime(event.start)}}</strong></span>
+            <span class="pull-right">Event {{humanizeTime(event.start)}}</span>
           </div>
         </div>
       </li>

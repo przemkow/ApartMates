@@ -57,8 +57,7 @@
                     ng-repeat="debt in filtredSet = (debtsList | filter: {'user_name':  currentUser.name}: true) | orderBy:'date':reverse">
                     <div class="row rowCenter">
                         <div class="col-xs-2">
-                            <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal"
-                                                            src="https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"/>
+                            <div class="smallCircular"><img src="{{debt.image}}"/>
                             </div>
                         </div>
                         <div class="col-xs-5">
@@ -94,8 +93,7 @@
                     ng-repeat="debt in filtredSet2 = (debtsList | filter: {'users_creditor':  currentUser.name}: true) | orderBy:'date':reverse">
                     <div class="row rowCenter">
                         <div class="col-xs-2">
-                            <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal"
-                                                            src="https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"/>
+                            <div class="smallCircular"><img src="{{debt.image}}"/>
                             </div>
                         </div>
                         <div class="col-xs-5">

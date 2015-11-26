@@ -46,6 +46,9 @@
     color: #7f8c8d;
     line-height: normal;
 }
+.commentInRow{
+    color: #333;
+}
 
 .smallCircular {
     border-radius: 50%;
@@ -58,7 +61,7 @@
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.accomplish .smallCircular img {
+.smallCircular img {
     text-align: center;
     display: block;
     height: 100%;

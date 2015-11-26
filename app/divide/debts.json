@@ -1,21 +1,26 @@
-[{
-  "id": 0,
-  "user_name": "Mikolaj",
-  "users_creditor": "Monika",
-  "amount": 3,
-  "date" : "2015-11-24"
-},
-{
-"id": 1,
-"user_name": "Monika",
-"users_creditor": "Kuba",
-"amount": 12,
-"date" : "2015-11-24"
-},
-{
-"id": 2,
-"user_name": "Przemek",
-"users_creditor": "Monika",
-"amount": 4.5,
-"date" : "2015-11-24"
-}]
+[
+  {
+    "id": 0,
+    "user_name": "Mikołaj",
+    "users_creditor": "Monika",
+    "image": "http://www.michigansantaclausllc.com/images/Michigan-Santa-Claus-LLC.jpg",
+    "amount": 3,
+    "date": "2015-11-24"
+  },
+  {
+    "id": 1,
+    "user_name": "Monika",
+    "users_creditor": "Kuba",
+    "image": "https://lh3.googleusercontent.com/-w2_LoeHaLis/VgHfodSD3ZI/AAAAAAAAM4c/LQPxwPYmy9I/w854-h855-no/IMG_0381_2-2.jpg",
+    "amount": 12,
+    "date": "2015-11-24"
+  },
+  {
+    "id": 2,
+    "user_name": "Przemek",
+    "users_creditor": "Monika",
+    "image": "https://avatars0.githubusercontent.com/u/10272880?v=3&s=460.jpg",
+    "amount": 4.5,
+    "date": "2015-11-24"
+  }
+]

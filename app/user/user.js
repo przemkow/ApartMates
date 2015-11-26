@@ -32,9 +32,9 @@ function userController($scope) {
       msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Welcome!");
       var user = {
         name: "Monika",
-        lastName: "Smith",
+        lastName: "Kowalska",
         guest: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Grzegorz_P_Pawlak1.jpg/160px-Grzegorz_P_Pawlak1.jpg"
+        image: "profile.jpg"
       };
       $scope.currentUser = user;
       setTimeout(
