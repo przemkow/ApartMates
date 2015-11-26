@@ -1,34 +1,53 @@
 <div class="col-lg-1">
 </div>
 <div class="col-lg-10 approve" ng-app="myApp.approve" ng-controller="approve">
-  <h1>Approve</h1>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="duty in awaiting_duties"
-        ng-class="{'list-group-item-success animated bounceOutLeft' : duty.status === 2, 'list-group-item-danger' : duty.status === -1}"
-        ng-hide="duty.status === 2">
-      <fieldset ng-disabled="duty.status === -1">
-          {{duty.title}} by {{duty.resp_person}}
+    <h1>Approve</h1>
+    <ul class="list-group">
+        <li class="list-group-item" ng-disabled="duty.status === -1" ng-repeat="duty in awaiting_duties"
+            ng-class="{'list-group-item-success animated bounceOutLeft' : duty.status === 2, 'list-group-item-danger' : duty.status === -1}"
+            ng-hide="duty.status === 2">
+            <div class="row rowCenter">
+                <div class="col-md-1">
+                    <time datetime={{duty.date}} class="icon">
+                        <em>{{duty.date | date: 'EEEE'}}</em>
+                        <strong>{{duty.date | date: 'MMMM'}}</strong>
+                        <span>{{duty.date | date: 'dd'}}</span>
+                    </time>
+                </div>
+                <div class="col-md-3">
+                    <span>{{duty.resp_person}} </span>
+                </div>
+                <div class="col-md-6">
+                    <span>{{duty.title}} </span>
+                </div>
+                <div class="col-md-1">
+                    <button mwl-confirm
+                            title="Confirm"
+                            message="Are you sure you want to confirm this duty?"
+                            placement="left"
+                            on-confirm="approve(duty.id)"
+                            class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="col-md-1">
+                    <button ng-click="expandForm = true" class="btn btn-danger pull-right"><i
+                            class="glyphicon glyphicon-remove" aria-hidden="true"></i></button>
+                </div>
 
-        <button ng-click="expandForm = true" class="btn btn-danger pull-right"><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></button>
-        <button mwl-confirm
-                title="Confirm"
-                message="Are you sure you want to confirm this duty?"
-                placement="left"
-                on-confirm="approve(duty.id)"
-                class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok" aria-hidden="true"></i></button>
-
-        <div class='fadeIn' ng-show="expandForm">
-          <input ng-model="rejectMessage" class="form-control reject-input" id="reject" placeholder="Why you rejected {{duty.resp_person}} cleaning?">
-          <button mwl-confirm
-                  title="Confirm"
-                  message="Are you sure you want to reject this duty?"
-                  confirm-text="Reject"
-                  on-confirm="reject(duty.id, rejectMessage)"
-                  class="btn btn-default">Send</button>
-        </div>
-      </fieldset>
-    </li>
-  </ul>
+            </div>
+            <div class='fadeIn' ng-show="expandForm">
+                <input ng-model="rejectMessage" class="form-control reject-input" id="reject"
+                       placeholder="Why you rejected {{duty.resp_person}} cleaning?">
+                <button mwl-confirm
+                        title="Confirm"
+                        message="Are you sure you want to reject this duty?"
+                        confirm-text="Reject"
+                        on-confirm="reject(duty.id, rejectMessage)"
+                        class="btn btn-default">Send
+                </button>
+            </div>
+        </li>
+    </ul>
 
 </div>
 <div class="col-lg-2">

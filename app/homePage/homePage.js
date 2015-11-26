@@ -11,7 +11,7 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
 
     .controller('homePageCtrl', ['$scope', 'homePageFactory', 'announcementFactory', function ($scope, homePageFactory, announcementFactory) {
         $scope.duties;
-        $scope.formatted_duties = [];
+        $scope.calendarEvents = [];
 
         announcementFactory.getAnnouncements().then(function (response) {
             $scope.announces = response.data;
@@ -22,7 +22,7 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
                     start: value.eventDate
                 };
                 this.push(temp_object);
-            }, $scope.formatted_duties);
+            }, $scope.calendarEvents);
         });
 
         homePageFactory.getDuties().then(function (response) {
@@ -33,13 +33,13 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
                     start: value.deadline
                 };
                 this.push(temp_object);
-            }, $scope.formatted_duties);
+            }, $scope.calendarEvents);
 
 
             //custom filter
             $scope.afterToday = function () {
                 return function (item) {
-                    return item.deadline > new moment().format("YYYY-MM-D");
+                    return item.start > new moment().format("YYYY-MM-D");
                 }
             }
 
@@ -49,7 +49,7 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
         });
 
         $scope.eventSources = [{
-            events: $scope.formatted_duties
+            events: $scope.calendarEvents
         }
         ];
 

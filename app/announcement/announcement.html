@@ -23,7 +23,7 @@
             <label class="control-label">Select all</label>
         </div>
         <div class="form-group">
-            <div class="checkbox" ng-repeat="sharedUser in usersList">
+            <div ng-repeat="sharedUser in usersList">
                 <input type="checkbox" value="{{sharedUser.id}}" ng-model="announce.usersList[sharedUser.id]">
                 {{sharedUser.user_name}}
             </div>

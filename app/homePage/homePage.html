@@ -9,18 +9,18 @@
     <div class="col-lg-1"/>
     <div class="col-lg-10">
       <h3>Upcoming things:</h3>
-      <li class="list-group-item" ng-repeat="duty in duties| filter: afterToday()">
+      <li class="list-group-item" ng-repeat="event in calendarEvents| filter: afterToday()">
         <div class="row rowView">
           <div class="col-xs-1">
-            <time datetime={{duty.deadline}} class="icon">
-              <em>{{duty.deadline | date: 'EEEE'}}</em>
-              <strong>{{duty.deadline | date: 'MMMM'}}</strong>
-              <span>{{duty.deadline | date: 'dd'}}</span>
+            <time datetime={{event.start}} class="icon">
+              <em>{{event.start | date: 'EEEE'}}</em>
+              <strong>{{event.start | date: 'MMMM'}}</strong>
+              <span>{{event.start | date: 'dd'}}</span>
             </time>
           </div>
           <div class="col-xs-11">
-            <span>{{duty.title}}</span>
-            <span class="pull-right">You need to accomplish that duty <strong>{{humanizeTime(duty.deadline)}}</strong></span>
+            <span>{{event.title}}</span>
+            <span class="pull-right">You need to accomplish that duty <strong>{{humanizeTime(event.start)}}</strong></span>
           </div>
 
         </div>
