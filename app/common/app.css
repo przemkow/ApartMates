@@ -35,8 +35,9 @@ body {
     width: 85%; } }
 
 .user-profile {
-  height: 30em;
-  width: 30em; }
+  margin-top: 1em;
+  height: 40%;
+  width: 40%; }
 
 .myModal {
   position: fixed;
