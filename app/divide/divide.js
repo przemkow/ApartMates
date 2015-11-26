@@ -15,7 +15,6 @@ angular.module('myApp.divide', ['ngRoute'])
         });
 
         divideFactory.getDebts().then(function(response){
-            console.log(response);
             $scope.debtsList = response.data;
         });
 

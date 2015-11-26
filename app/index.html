@@ -32,11 +32,11 @@
 </head>
 <body ng-controller="userCtrl as user">
 <ng-include src="'./user/loginModal.html'"></ng-include>
-<div id="wrapper">
+<div id="wrapper" ng-class="toggleMenu ? 'toggled' : 'not-toggled'">
   <!-- Sidebar -->
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <span class="glyphicon glyphicon-menu-left menu-toggle visible-xs" aria-hidden="true"></span>
+      <span ng-click="toggleMenu = false" class="glyphicon glyphicon-menu-left menu-toggle visible-xs" aria-hidden="true"></span>
       <li class="sidebar-user-picture">
         <div class="circular circus"><img data-toggle="modal" data-target="#login-modal" src="{{currentUser.image}}"/>
         </div>
@@ -44,17 +44,17 @@
       <li class="sidebar-user-name"><a href="#asd">{{ currentUser.name }} {{currentUser.lastName}}</a></li>
       </br>
       <hr>
-      <li><a href="#homePage"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Homepage</a></li>
-      <li><a href="#approve"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Waiting for
+      <li><a href="#homePage" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>Homepage</a></li>
+      <li><a href="#approve" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>Waiting for
         approve</a></li>
-      <li><a href="#accomplish"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>Accomplish duty</a>
+      <li><a href="#accomplish" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>Accomplish duty</a>
       </li>
-      <li><a href="#divide"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>Divide expenses</a>
+      <li><a href="#divide" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>Divide expenses</a>
       </li>
-      <li><a href="#announcement"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Announcements</a></li>
+      <li><a href="#announcement" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Announcements</a></li>
       <hr class="short">
-      <li><a href="#mates"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Add new mate</a></li>
-      <li><a href="#room"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Add new room</a></li>
+      <li><a href="#mates" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Add new mate</a></li>
+      <li><a href="#room" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Add new room</a></li>
       <hr class="short">
       <li><a ng-show="!currentUser.guest" ng-click="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a></li>
     </ul>
@@ -63,7 +63,7 @@
 
   <div class="navigation-bar">
     <div class="navigation-icon">
-      <span class="glyphicon glyphicon-menu-hamburger menu-toggle visible-xs" aria-hidden="true"></span>
+      <span ng-click="toggleMenu = true" class="glyphicon glyphicon-menu-hamburger menu-toggle visible-xs" aria-hidden="true"></span>
     </div>
     <div class="navigation-title">{{title}}</div>
   </div>
@@ -113,12 +113,6 @@
 <script src="components/version/interpolate-filter.js"></script>
 <script type="text/javascript" src="bower_components/select2/select2.js"></script>
 <script type="text/javascript" src="bower_components/angular-ui-select2/src/select2.js"></script>
-<script>
-  $(".menu-toggle").click(function (e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
-</script>
 
 <div ng-class="currentUser.guest? 'modal-backdrop fade in' : 'none'"></div>
 
