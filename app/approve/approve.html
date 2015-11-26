@@ -26,24 +26,26 @@
                             message="Are you sure you want to confirm this duty?"
                             placement="left"
                             on-confirm="approve(duty.id)"
-                            class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+                            class="btn btn-success pull-right"
+                            ng-hide="duty.status === -1"><i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div class="col-md-1">
-                    <button ng-click="expandForm = true" class="btn btn-danger pull-right"><i
+                    <button ng-click="expandForm = true"  ng-hide="duty.status === -1" class="btn btn-danger pull-right"><i
                             class="glyphicon glyphicon-remove" aria-hidden="true"></i></button>
                 </div>
 
             </div>
             <div class='fadeIn' ng-show="expandForm">
-                <input ng-model="rejectMessage" class="form-control reject-input" id="reject"
+                <input ng-model="rejectMessage" class="form-control reject-input" id="reject" ng-disabled="duty.status === -1"
                        placeholder="Why you rejected {{duty.resp_person}} cleaning?">
                 <button mwl-confirm
                         title="Confirm"
                         message="Are you sure you want to reject this duty?"
                         confirm-text="Reject"
                         on-confirm="reject(duty.id, rejectMessage)"
-                        class="btn btn-default">Send
+                        class="btn btn-default"
+                        ng-hide="duty.status === -1">Send
                 </button>
             </div>
         </li>
