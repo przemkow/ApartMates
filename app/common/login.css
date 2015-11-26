@@ -2,9 +2,6 @@
 * {
   font-family: 'Roboto', sans-serif; }
 
-#login-modal .modal-dialog {
-  width: 450px; }
-
 #login-modal input[type=text], input[type=password] {
   margin-top: 10px; }
 
