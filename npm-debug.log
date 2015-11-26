@@ -25,23 +25,23 @@
 5 verbose install     'shelljs' ] ]
 6 verbose install where, peers [ 'D:\\Repositories\\ApartMates', [] ]
 7 info preinstall angular-seed@0.0.0
-8 verbose already installed skipping karma-junit-reporter@^0.2.2 D:\Repositories\ApartMates
-9 verbose already installed skipping load-grunt-tasks@^3.3.0 D:\Repositories\ApartMates
-10 verbose already installed skipping protractor@^2.1.0 D:\Repositories\ApartMates
-11 verbose already installed skipping shelljs@^0.2.6 D:\Repositories\ApartMates
-12 verbose already installed skipping bower@^1.6.5 D:\Repositories\ApartMates
-13 verbose already installed skipping express@^4.13.3 D:\Repositories\ApartMates
-14 verbose already installed skipping grunt@^0.4.5 D:\Repositories\ApartMates
-15 verbose already installed skipping grunt-concurrent@^2.0.4 D:\Repositories\ApartMates
-16 verbose already installed skipping grunt-contrib-connect@^0.11.2 D:\Repositories\ApartMates
-17 verbose already installed skipping grunt-contrib-watch@^0.6.1 D:\Repositories\ApartMates
-18 verbose already installed skipping grunt-sass@^1.1.0 D:\Repositories\ApartMates
-19 verbose already installed skipping http-server@^0.6.1 D:\Repositories\ApartMates
-20 verbose already installed skipping jasmine-core@^2.3.4 D:\Repositories\ApartMates
-21 verbose already installed skipping karma@~0.12 D:\Repositories\ApartMates
-22 verbose already installed skipping karma-chrome-launcher@^0.1.12 D:\Repositories\ApartMates
-23 verbose already installed skipping karma-firefox-launcher@^0.1.6 D:\Repositories\ApartMates
-24 verbose already installed skipping karma-jasmine@^0.3.5 D:\Repositories\ApartMates
+8 verbose already installed skipping karma@~0.12 D:\Repositories\ApartMates
+9 verbose already installed skipping karma-chrome-launcher@^0.1.12 D:\Repositories\ApartMates
+10 verbose already installed skipping karma-firefox-launcher@^0.1.6 D:\Repositories\ApartMates
+11 verbose already installed skipping karma-jasmine@^0.3.5 D:\Repositories\ApartMates
+12 verbose already installed skipping karma-junit-reporter@^0.2.2 D:\Repositories\ApartMates
+13 verbose already installed skipping load-grunt-tasks@^3.3.0 D:\Repositories\ApartMates
+14 verbose already installed skipping protractor@^2.1.0 D:\Repositories\ApartMates
+15 verbose already installed skipping shelljs@^0.2.6 D:\Repositories\ApartMates
+16 verbose already installed skipping bower@^1.6.5 D:\Repositories\ApartMates
+17 verbose already installed skipping express@^4.13.3 D:\Repositories\ApartMates
+18 verbose already installed skipping grunt@^0.4.5 D:\Repositories\ApartMates
+19 verbose already installed skipping grunt-concurrent@^2.0.4 D:\Repositories\ApartMates
+20 verbose already installed skipping grunt-contrib-connect@^0.11.2 D:\Repositories\ApartMates
+21 verbose already installed skipping grunt-contrib-watch@^0.6.1 D:\Repositories\ApartMates
+22 verbose already installed skipping grunt-sass@^1.1.0 D:\Repositories\ApartMates
+23 verbose already installed skipping http-server@^0.6.1 D:\Repositories\ApartMates
+24 verbose already installed skipping jasmine-core@^2.3.4 D:\Repositories\ApartMates
 25 silly install resolved []
 26 info build D:\Repositories\ApartMates
 27 verbose linkStuff [ false, false, false, 'D:\\Repositories' ]
