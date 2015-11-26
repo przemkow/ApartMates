@@ -47,9 +47,9 @@
   background-color: #eb575b !important; }
 
 #img_logo {
-  margin: 30px;
   max-height: 250px;
-  max-width: 250px; }
+  max-width: 250px;
+  width: 100%; }
 
 /* #########################################
    #    override the bootstrap configs     #
