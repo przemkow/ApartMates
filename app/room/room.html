@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="freq">Select cleaning frequency:</label>
             <select class="form-control" ng-options="opt for opt in frequencyList"
-                    ng-model="room.cleaning_frequency" id="freq" />
+                    ng-model="room.cleaning_frequency" id="freq" ></select>
         </div>
         <button type="button" ng-click="save()" class="btn btn-success">Save</button>
         <button type="button" ng-click="cancel()" class="btn btn-danger">Cancel</button>
@@ -24,8 +24,10 @@
         <li class="list-group-item" ng-repeat="room in rooms">
             <fieldset>
                 <div class="col-md-4">{{room.name}}</div>
-                <div class="col-md-8"><span class="light-text">which should be cleaned every</span> <b>{{room.cleaning_frequency}}</b></div>
-
+                <div class="col-md-7"><span class="light-text">which should be cleaned every</span> <b>{{room.cleaning_frequency}}</b></div>
+                <div class="col-md-1"><button ng-click="remove(room)" type="button" class="btn btn-danger" >
+                    <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
+                </button></div>
             </fieldset>
         </li>
     </ul>

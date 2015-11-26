@@ -7,20 +7,20 @@
             ng-class="{'list-group-item-success animated bounceOutLeft' : duty.status === 2, 'list-group-item-danger' : duty.status === -1}"
             ng-hide="duty.status === 2">
             <div class="row rowCenter">
-                <div class="col-md-1">
+                <div class="col-xs-1">
                     <time datetime={{duty.date}} class="icon">
                         <em>{{duty.date | date: 'EEEE'}}</em>
                         <strong>{{duty.date | date: 'MMMM'}}</strong>
                         <span>{{duty.date | date: 'dd'}}</span>
                     </time>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <span>{{duty.resp_person}} </span>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-5">
                     <span>{{duty.title}} </span>
                 </div>
-                <div class="col-md-1">
+                <div class="col-xs-2">
                     <button mwl-confirm
                             title="Confirm"
                             message="Are you sure you want to confirm this duty?"
@@ -34,7 +34,6 @@
                     <button ng-click="expandForm = true"  ng-hide="duty.status === -1" class="btn btn-danger pull-right"><i
                             class="glyphicon glyphicon-remove" aria-hidden="true"></i></button>
                 </div>
-
             </div>
             <div class='fadeIn' ng-show="expandForm">
                 <input ng-model="rejectMessage" class="form-control reject-input" id="reject" ng-disabled="duty.status === -1"
@@ -50,7 +49,6 @@
             </div>
         </li>
     </ul>
-
 </div>
 <div class="col-lg-2">
 </div>

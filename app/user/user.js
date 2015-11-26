@@ -27,9 +27,9 @@ function userController($scope) {
     var $lg_username = $('#login_username').val();
     var $lg_password = $('#login_password').val();
     if (!validateUser(credentials)) {
-      msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
+      msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Invalid login or password");
     } else {
-      msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
+      msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Welcome!");
       var user = {
         name: "Monika",
         lastName: "Smith",

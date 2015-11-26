@@ -35,15 +35,14 @@ body {
   }
 }
 
+.view-animate.ng-enter {
+  animation: 1s fadeIn ease;
+}
+
 @media(min-width: 768px){
   .navigation-bar{
     width: 85%;
   }
-
-  .view-animate.ng-enter {
-    animation: 1s fadeIn ease;
-  }
-
 }
 
 .myModal{
@@ -57,4 +56,7 @@ body {
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   outline: 0;
+}
+div[class^='col-xs'],div[class*='col-xs']{
+  min-width: 60px;
 }
