@@ -35,21 +35,21 @@
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="ann in announcesList | orderBy:'eventDate':reverse">
             <div class="row rowCenter">
-                <div class="col-md-1">
+                <div class="col-xs-1">
                     <time datetime={{ann.eventDate}} class="icon">
                         <em>{{ann.eventDate | date: 'EEEE'}}</em>
                         <strong>{{ann.eventDate | date: 'MMMM'}}</strong>
                         <span>{{ann.eventDate | date: 'dd'}}</span>
                     </time>
                 </div>
-                <div class="col-md-3">
+                <div class="col-xs-3">
                     <span>{{ann.user_name}} </span>
                 </div>
-                <div class="col-md-7">
+                <div class="col-xs-6">
                     <span>{{ann.desc}} </span>
                 </div>
-                <div class="col-md-1">
-                    <span class="dateStamp"> posted</br> {{dayCounter(ann.date)}}</span>
+                <div class="col-xs-2">
+                    <span class="dateStamp"> posted: {{dayCounter(ann.date)}}</span>
                 </div>
             </div>
         </li>
