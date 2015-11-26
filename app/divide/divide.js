@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.divide', ['ngRoute'])
+angular.module('myApp.divide', ['ngRoute', 'mp.datePicker'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/divide', {
@@ -42,7 +42,21 @@ angular.module('myApp.divide', ['ngRoute'])
             $scope.newExpense = false;
             $scope.btnAddExp = false;
         };
+/*
+        $scope.date = new Date();
 
+        $scope.$watch('date', function (date)
+        {
+            $scope.dateString = dateFilter(date, 'yyyy-MM-dd');
+            console.log('A', $scope.date, $scope.expense.date);
+        });
+
+        $scope.$watch('dateString', function (dateString)
+        {
+            $scope.date = new Date(dateString);
+            console.log('B', $scope.date, $scope.expense.date);
+        });
+*/
     }])
 
     .factory('divideFactory', ['$http', function($http){

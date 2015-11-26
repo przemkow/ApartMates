@@ -28,15 +28,17 @@
                 </div>
                 <div class="form-group">
                     <label for="date">Select announcement date:</label>
-                    <input type="date" class="form-control" ng-model="expense.date" id="date">
+                    <input type="date" ng-click="showDatePicker = true" class="form-control" ng-model="expense.date" id="date">
                 </div>
 
                 <label>Select mates to share expenses with:</label>
-                <input type="checkbox" ng-model="expense.all" ng-change="updateAll(announce)">
-                <label class="control-label">Select all</label>
 
                 <div class="controls">
-                    <div class="checkbox inline" ng-repeat="sharedUser in usersList">
+                    <input type="checkbox" ng-model="expense.all" ng-change="updateAll(announce)">
+                    <label class="control-label">Select all</label>
+                </div>
+                <div class="controls">
+                    <div class=" inline" ng-repeat="sharedUser in usersList">
                         <input type="checkbox" value="{{sharedUser.id}}" ng-model="expense.usersList[sharedUser.id]">
                         {{sharedUser.user_name}}
                     </div>
@@ -51,7 +53,8 @@
         <div class="col-lg-5">
             <h2>You owe</h2>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="debt in filtredSet = (debtsList | filter: {'user_name':  currentUser.name}: true) | orderBy:'date':reverse">
+                <li class="list-group-item"
+                    ng-repeat="debt in filtredSet = (debtsList | filter: {'user_name':  currentUser.name}: true) | orderBy:'date':reverse">
                     <div class="row rowCenter">
                         <div class="col-md-2">
                             <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal"
@@ -87,7 +90,8 @@
         <div class="col-lg-5">
             <h2>Owe to you</h2>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="debt in filtredSet2 = (debtsList | filter: {'users_creditor':  currentUser.name}: true) | orderBy:'date':reverse">
+                <li class="list-group-item"
+                    ng-repeat="debt in filtredSet2 = (debtsList | filter: {'users_creditor':  currentUser.name}: true) | orderBy:'date':reverse">
                     <div class="row rowCenter">
                         <div class="col-md-2">
                             <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal"
