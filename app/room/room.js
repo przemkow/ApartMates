@@ -30,6 +30,11 @@ angular.module('myApp.room', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
 
   $scope.frequencyList=['1 day', '2 days', '5 days', '7 days', '2 weeks', '1 month'];
 
+    $scope.remove = function(item) {
+        var index = $scope.rooms.indexOf(item);
+        $scope.rooms.splice(index, 1);
+    };
+
   $scope.cancel = function () {
     $scope.room = {};
     $scope.newRoom = false;

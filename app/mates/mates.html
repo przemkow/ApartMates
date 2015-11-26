@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="mail">E-mail:</label>
-            <input type="email" class="form-control" ng-model="mate.email" validate id="mail" />
+            <input type="email" class="form-control" ng-model="mate.email" id="mail" />
         </div>
         <div class="form-group">
             <label for="imageUrl">Image url:</label>
@@ -30,9 +30,9 @@
         <li class="list-group-item" ng-repeat="Mate in mates">
             <fieldset>
                 <div class="col-md-2"><img class="circus" src="{{Mate.image}}" width="50px" height="50px"/></div>
-                <div class="col-md-4">{{Mate.user_name}}</div>
+                <div class="col-md-3">{{Mate.user_name}}</div>
                 <div class="col-md-5"><a href="mailto:{{Mate.email}}"> {{Mate.email}}</a></div>
-
+                <div class="col-md-1"><button ng-click="remove(Mate)" type="button" class="btn btn-danger" >X</button></div>
             </fieldset>
         </li>
     </ul>

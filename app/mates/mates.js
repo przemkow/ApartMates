@@ -31,7 +31,10 @@ angular.module('myApp.mates', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
     $scope.newMate = false;
     $scope.btnAddMate = false;
   };
-
+  $scope.remove = function(item) {
+    var index = $scope.mates.indexOf(item);
+    $scope.mates.splice(index, 1);
+  };
   $scope.cancel = function () {
     $scope.mate = {};
     $scope.newMate = false;
