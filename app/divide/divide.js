@@ -31,6 +31,15 @@ angular.module('myApp.divide', ['ngRoute'])
         };
 
         $scope.save = function () {
+            var checkedCount = Object.keys($scope.expense.usersList).length
+            $scope.debtsList.forEach(function(debt){
+                if(debt.users_creditor==$scope.expense.whose.user_name){
+                    debt.amount+=($scope.expense.amount/checkedCount);
+                }
+                else{
+                    //debt.amount-=($scope.expense.amount/checkedCount);
+                }
+            });
             $scope.expense = {};
             $scope.newExpense = false;
             $scope.btnAddExp = false;
