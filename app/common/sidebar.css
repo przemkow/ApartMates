@@ -101,16 +101,17 @@
     position: relative; }
   #sidebar-wrapper {
     width: 20%; } }
-
-.circular {
-  border-radius: 50%;
-  overflow: hidden;
-  width: 15em;
-  height: 15em;
-  margin: 0 auto;
+.circus{
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8); }
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.circular {
+  width: 15em;
+  height: 15em; }
 
 .circular img {
   text-align: center;

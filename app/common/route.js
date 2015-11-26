@@ -22,5 +22,8 @@ myApp.config(
         }).when('/room', {
             title: 'Rooms',
             templateUrl: './room/room.html'
+        }).when('/mates', {
+            title: 'Mates',
+            templateUrl: './mates/mates.html'
         }).otherwise({redirectTo: '/homePage'});
     }]);

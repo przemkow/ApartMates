@@ -38,7 +38,7 @@
     <ul class="sidebar-nav">
       <span class="glyphicon glyphicon-menu-left menu-toggle visible-xs" aria-hidden="true"></span>
       <li class="sidebar-user-picture">
-        <div class="circular"><img data-toggle="modal" data-target="#login-modal" src="{{currentUser.image}}"/>
+        <div class="circular circus"><img data-toggle="modal" data-target="#login-modal" src="{{currentUser.image}}"/>
         </div>
       </li>
       <li class="sidebar-user-name"><a href="#asd">{{ currentUser.name }} {{currentUser.lastName}}</a></li>
@@ -54,7 +54,7 @@
       <li><a href="#announcement"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>Add
         announcement</a></li>
       <hr class="short">
-      <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Add new mate</a></li>
+      <li><a href="#mates"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Add new mate</a></li>
       <li><a href="#room"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Add new room</a></li>
       <hr class="short">
       <li><a ng-show="!currentUser.guest" ng-click="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a></li>
@@ -105,6 +105,7 @@
 <script src="user/user.js"></script>
 <script src="approve/approve.js"></script>
 <script src="room/room.js"></script>
+<script src="mates/mates.js"></script>
 <script src="accomplish/accomplish.js"></script>
 <script src="divide/divide.js"></script>
 <script src="announcement/announcement.js"></script>

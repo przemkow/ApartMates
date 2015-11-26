@@ -1,0 +1,39 @@
+<div class="col-lg-1">
+</div>
+<div class="col-lg-10 approve" ng-app="myApp.mate" ng-controller="mate">
+    <div class="topRow">
+        <span>Mates</span>
+        <button ng-click="newMate = true; btnAddMate = true" ng-hide="btnAddMate" class="btn btn-success"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></button>
+    </div>
+
+    <form ng-show="newMate" novalidate name="newMateForm" class="form well">
+        <div class="form-group">
+            <label for="text">Mate name:</label>
+            <input type="text" class="form-control" id="text" ng-model="mate.user_name"/>
+        </div>
+        <div class="form-group">
+            <label for="mail">E-mail:</label>
+            <input type="email" class="form-control" ng-model="mate.email" validate id="mail" />
+        </div>
+        <div class="form-group">
+            <label for="imageUrl">Image url:</label>
+            <input type="url" class="form-control" ng-model="mate.image" id="imageUrl" />
+        </div>
+        <button type="button" ng-click="save()" class="btn btn-success">Save</button>
+        <button type="button" ng-click="cancel()" class="btn btn-danger">Cancel</button>
+    </form>
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="Mate in mates">
+            <fieldset>
+                <div class="col-md-2"><img class="circus" src="{{Mate.image}}" width="50px" height="50px"/></div>
+                <div class="col-md-4">{{Mate.user_name}}</div>
+                <div class="col-md-5">{{Mate.email}}</div>
+
+            </fieldset>
+        </li>
+    </ul>
+
+</div>
+<div class="col-lg-2">
+</div>

@@ -2,26 +2,31 @@
   {
     "id": 0,
     "user_name": "Monika",
-    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Grzegorz_P_Pawlak1.jpg/160px-Grzegorz_P_Pawlak1.jpg",
+    "email": "monika@apartmates.com"
   },
   {
     "id": 1,
     "user_name": "Kuba",
-    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+    "image": "https://lh3.googleusercontent.com/-w2_LoeHaLis/VgHfodSD3ZI/AAAAAAAAM4c/LQPxwPYmy9I/w854-h855-no/IMG_0381_2-2.jpg",
+    "email": "kuba@apartmates.com"
   },
   {
     "id": 2,
     "user_name": "Mikołaj",
-    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+    "image": "http://www.michigansantaclausllc.com/images/Michigan-Santa-Claus-LLC.jpg",
+    "email": "mikolaj@apartmates.com"
   },
   {
     "id": 3,
     "user_name": "Przemek",
-    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+    "image": "https://avatars0.githubusercontent.com/u/10272880?v=3&s=460",
+    "email": "przemek@apartmates.com"
   },
   {
     "id": 4,
     "user_name": "John",
-    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif"
+    "image": "https://cursurideactorie.files.wordpress.com/2010/10/unknown-person.gif",
+    "email": "john@apartmates.com"
   }
 ]

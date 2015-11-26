@@ -11,7 +11,8 @@ var myApp = angular.module('myApp', [
   'myApp.divide',
   'myApp.announcement',
   'myApp.version',
-  'myApp.room'
+  'myApp.room',
+  'myApp.mates'
 ]);
 
 myApp.run(['$rootScope', function($rootScope) {
