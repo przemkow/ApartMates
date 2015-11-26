@@ -22,7 +22,11 @@ angular.module('myApp.mates', ['ngRoute', 'ngAnimate', 'mwl.confirm'])
 .controller('mate', ['$scope', 'mateFactory', function($scope, mateFactory) {
   $scope.save = function () {
     $scope.mates.push($scope.mate);
-
+    $("#user-alert").show(300,function(){
+      setTimeout(function() {
+        $("#user-alert").hide(300);
+      }, 3000);
+    });
     $scope.mate = {};
     $scope.newMate = false;
     $scope.btnAddMate = false;

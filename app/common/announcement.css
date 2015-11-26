@@ -5,6 +5,7 @@
 
 .topRow button{
     float: right;
+    margin-bottom: 10px;
 }
 
 .topRow span{
