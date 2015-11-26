@@ -19,5 +19,8 @@ myApp.config(
         }).when('/announcement', {
             title: 'Add announcement',
             templateUrl: './announcement/announcement.html'
+        }).when('/room', {
+            title: 'Rooms',
+            templateUrl: './room/room.html'
         }).otherwise({redirectTo: '/homePage'});
     }]);

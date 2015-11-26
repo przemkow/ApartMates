@@ -48,9 +48,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0; }
+
   .view-animate.ng-enter {
     left: 100%; }
   .view-animate.ng-enter.ng-enter-active {
     left: 1em; } }
-
+.light-text{
+  color:#8c8c8c;
+  font-weight: lighter;
+}
 /*# sourceMappingURL=app.css.map */

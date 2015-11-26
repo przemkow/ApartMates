@@ -10,7 +10,8 @@ var myApp = angular.module('myApp', [
   'myApp.accomplish',
   'myApp.divide',
   'myApp.announcement',
-  'myApp.version'
+  'myApp.version',
+  'myApp.room'
 ]);
 
 myApp.run(['$rootScope', function($rootScope) {

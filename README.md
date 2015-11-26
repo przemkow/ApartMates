@@ -104,7 +104,7 @@ app/                    --> all of the source files for the application
     homePage.js         --> tests of the controller
   view2/                --> the view2 view template and logic
     view2.html            --> the partial template
-    approve.js              --> the controller logic
+    room.js              --> the controller logic
     approve_test.js         --> tests of the controller
   app.js                --> main application module
   index.html            --> app layout file (the main html template file of the app)

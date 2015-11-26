@@ -1,0 +1,12 @@
+[
+  {
+    "id": 0,
+    "name": "Kitchen",
+    "cleaning_frequency": "2 days"
+  },
+  {
+    "id": 1,
+    "name": "Bathroom",
+    "cleaning_frequency": "5 days"
+  }
+]
