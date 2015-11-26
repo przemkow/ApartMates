@@ -25,7 +25,9 @@
             <fieldset>
                 <div class="col-md-4">{{room.name}}</div>
                 <div class="col-md-7"><span class="light-text">which should be cleaned every</span> <b>{{room.cleaning_frequency}}</b></div>
-                <div class="col-md-1"><button ng-click="remove(room)" type="button" class="btn btn-danger" >X</button></div>
+                <div class="col-md-1"><button ng-click="remove(room)" type="button" class="btn btn-danger" >
+                    <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
+                </button></div>
             </fieldset>
         </li>
     </ul>
