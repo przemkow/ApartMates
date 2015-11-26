@@ -37,7 +37,6 @@ function userController($scope) {
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Grzegorz_P_Pawlak1.jpg/160px-Grzegorz_P_Pawlak1.jpg"
       };
       $scope.currentUser = user;
-      console.log($scope.currentUser);
       setTimeout(
         function()
         {

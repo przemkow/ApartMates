@@ -1,0 +1,52 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #EEEEEE; }
+
+#page-content-wrapper {
+  padding-top: 3em; }
+
+.navigation-bar {
+  background: #242736;
+  height: 3em;
+  position: fixed;
+  width: 100%;
+  z-index: 100; }
+  .navigation-bar .glyphicon {
+    display: inline;
+    top: 7px;
+    color: #EEEEEE;
+    padding-left: 10px;
+    font-size: 2em;
+    text-align: left; }
+  .navigation-bar .navigation-icon {
+    float: left; }
+  .navigation-bar .navigation-title {
+    color: #EEEEEE;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 2em;
+    font-size: 1.5em; }
+
+.view-animate.ng-enter {
+  animation: 1s fadeIn ease; }
+
+@media (min-width: 768px) {
+  .navigation-bar {
+    width: 85%; } }
+
+.myModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0; }
+
+div[class^='col-xs'], div[class*='col-xs'] {
+  min-width: 60px; }
+
+/*# sourceMappingURL=app.css.map */
