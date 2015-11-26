@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-xs-1" ng-hide="duty.status === 1">
                     <button mwl-confirm
-                            placement="left"
+                            placement="bottom"
                             title="Confirm"
                             message="Are you sure you want to confirm this duty?"
                             on-confirm="accomplish(duty.id)"
@@ -38,18 +38,17 @@
                     <li class="list-group-item"
                         ng-repeat="rejectInfo in duty.reject_info | orderBy:'date':reverse">
                         <div class="row rowCenter">
-                            <div class="col-xs-1"/>
                             <div class="col-xs-1">
                                 <div class="smallCircular"><img data-toggle="modal" data-target="#login-modal" src="{{rejectInfo.image}}"/>
                             </div>
                             </div>
-                            <div class="col-xs-3">
-                                <span>{{rejectInfo.user_name}} </span>
+                            <div class="col-xs-2">
+                                <span>{{rejectInfo.user_name}}:</span>
                             </div>
-                            <div class="col-xs-5">
+                            <div class="col-xs-7">
                                 <span>{{rejectInfo.msg}} </span>
                             </div>
-                            <div class="col-xs-2">
+                            <div class="col-xs-1">
                                 <span class="dateStamp"> posted</br>{{dayCounter(rejectInfo.date)}} </span>
                             </div>
                         </div>

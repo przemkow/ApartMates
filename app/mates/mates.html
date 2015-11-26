@@ -29,10 +29,19 @@
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="Mate in mates">
             <fieldset>
-                <div class="col-md-2"><img class="circus" src="{{Mate.image}}" width="50px" height="50px"/></div>
-                <div class="col-md-3">{{Mate.user_name}}</div>
-                <div class="col-md-6"><a href="mailto:{{Mate.email}}"> {{Mate.email}}</a></div>
-                <div class="col-md-1"><button ng-click="remove(Mate)" type="button" class="btn btn-danger" ><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></button></div>
+                <div class="row">
+                    <div class="col-xs-2"><img class="circus" src="{{Mate.image}}" width="50px" height="50px"/></div>
+                    <div class="col-xs-3">{{Mate.user_name}}</div>
+                    <div class="col-xs-6"><a href="mailto:{{Mate.email}}"> {{Mate.email}}</a></div>
+                    <div class="col-xs-1">
+                        <button
+                          mwl-confirm
+                          title="Confirm"
+                          message="Are you sure you want delete this user?"
+                          placement="bottom"
+                          on-confirm="remove(Mate)"
+                          type="button" class="btn btn-danger" ><i class="glyphicon glyphicon-remove" aria-hidden="true"></i></button></div>
+                </div>
             </fieldset>
         </li>
     </ul>

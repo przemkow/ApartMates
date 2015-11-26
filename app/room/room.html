@@ -23,11 +23,21 @@
     <ul class="list-group">
         <li class="list-group-item" ng-repeat="room in rooms">
             <fieldset>
-                <div class="col-md-4">{{room.name}}</div>
-                <div class="col-md-7"><span class="light-text">which should be cleaned every</span> <b>{{room.cleaning_frequency}}</b></div>
-                <div class="col-md-1"><button ng-click="remove(room)" type="button" class="btn btn-danger" >
-                    <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
-                </button></div>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4 col-lg-4">{{room.name}}</div>
+                    <div class="col-xs-5 col-sm-6 col-lg-7"><span class="light-text">which should be cleaned every</span> <b>{{room.cleaning_frequency}}</b></div>
+                    <div class="col-xs-2 col-sm-2 col-lg-1">
+                        <button
+                          mwl-confirm
+                          title="Confirm"
+                          message="Are you sure you want delete this room?"
+                          placement="bottom"
+                          on-confirm="remove(room)"
+                          type="button" class="btn btn-danger" >
+                        <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
             </fieldset>
         </li>
     </ul>

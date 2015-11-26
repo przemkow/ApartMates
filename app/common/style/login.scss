@@ -5,7 +5,6 @@
 }
 
 #login-modal .modal-dialog {
-  width: 450px;
 }
 
 #login-modal input[type=text], input[type=password] {
@@ -60,9 +59,9 @@
 }
 
 #img_logo {
-  margin: 30px;
   max-height: 250px;
   max-width: 250px;
+  width: 100%;
 }
 
 /* #########################################

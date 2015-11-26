@@ -2,9 +2,6 @@
 * {
   font-family: 'Lato', sans-serif; }
 
-#login-modal .modal-dialog {
-  width: 450px; }
-
 #login-modal input[type=text], input[type=password] {
   margin-top: 10px; }
 
@@ -50,9 +47,9 @@
   background-color: #eb575b !important; }
 
 #img_logo {
-  margin: 30px;
   max-height: 250px;
-  max-width: 250px; }
+  max-width: 250px;
+  width: 100%; }
 
 /* #########################################
    #    override the bootstrap configs     #
