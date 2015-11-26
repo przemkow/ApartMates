@@ -35,7 +35,7 @@ angular.module('myApp.announcement', ['ngRoute', 'ui.select2'])
 
         $scope.save = function () {
 
-            $scope.announce.date = new Date(); //momentjs zmienic date
+            $scope.announce.date = new moment();
             $scope.announce.user_name = $scope.currentUser.name; //dodac aktualnego uzytkownika
             $scope.announcesList.push($scope.announce);
 
