@@ -41,36 +41,20 @@ body {
   }
 
   .view-animate.ng-enter {
-    animation: 1s fadeInRight ease;
-
-    display:block;
-    width:97.5%;
-
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
+    animation: 1s fadeIn ease;
   }
 
-  .view-animate.ng-leave {
-    animation: 1s fadeOutLeft ease;
+}
 
-    display:block;
-    width:97.5%;
-
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-  }
-
-  .view-animate.ng-enter {
-    left:100%;
-  }
-  .view-animate.ng-enter.ng-enter-active {
-    left: 1em;
-  }
-
+.myModal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
 }

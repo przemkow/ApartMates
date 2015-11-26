@@ -1,0 +1,35 @@
+<div class="col-lg-1">
+</div>
+<div class="col-lg-10 approve" ng-app="myApp.room" ng-controller="room">
+    <div class="topRow">
+        <span>Rooms</span>
+        <button ng-click="newRoom = true; btnAddRoom = true" ng-hide="btnAddRoom" class="btn btn-success"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></button>
+    </div>
+
+    <form ng-show="newRoom" novalidate name="newRoomForm" class="form well">
+        <div class="form-group">
+            <label for="text">Room name:</label>
+            <input type="text" class="form-control" id="text" ng-model="room.name"/>
+        </div>
+        <div class="form-group">
+            <label for="freq">Select cleaning frequency:</label>
+            <select class="form-control" ng-options="opt for opt in frequencyList"
+                    ng-model="room.cleaning_frequency" id="freq" />
+        </div>
+        <button type="button" ng-click="save()" class="btn btn-success">Save</button>
+        <button type="button" ng-click="cancel()" class="btn btn-danger">Cancel</button>
+    </form>
+
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="room in rooms">
+            <fieldset>
+                <div class="col-md-4">{{room.name}}</div>
+                <div class="col-md-8"><span class="light-text">which should be cleaned every</span> <b>{{room.cleaning_frequency}}</b></div>
+
+            </fieldset>
+        </li>
+    </ul>
+
+</div>
+<div class="col-lg-2">
+</div>

@@ -52,9 +52,6 @@ function userController($scope) {
   };
 
   $scope.currentUser = guest;
-  if($scope.currentUser == guest){
-    $('.circular img').click();
-  }
 }
 
 
