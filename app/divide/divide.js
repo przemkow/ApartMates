@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.divide', ['ngRoute', 'mp.datePicker'])
+angular.module('myApp.divide', ['ngRoute'])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/divide', {
