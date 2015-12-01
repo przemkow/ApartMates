@@ -39,7 +39,7 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
             //custom filter
             $scope.afterToday = function () {
                 return function (item) {
-                    return item.start > new moment().format("YYYY-MM-D");
+                    return item.start >= new moment().format("YYYY-MM-DD");
                 }
             }
 
