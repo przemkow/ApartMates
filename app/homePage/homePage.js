@@ -19,7 +19,8 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
             angular.forEach($scope.announces, function (value, key) {
                 var temp_object = {
                     title: value.desc,
-                    start: value.eventDate
+                    start: value.eventDate,
+                    stick: true
                 };
                 this.push(temp_object);
             }, $scope.calendarEvents);
@@ -30,7 +31,8 @@ angular.module('myApp.homePage', ['ngRoute', 'ui.calendar'])
             angular.forEach($scope.duties, function (value, key) {
                 var temp_object = {
                     title: value.title,
-                    start: value.deadline
+                    start: value.deadline,
+                    stick: true
                 };
                 this.push(temp_object);
             }, $scope.calendarEvents);
