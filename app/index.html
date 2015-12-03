@@ -56,7 +56,14 @@
       <li><a href="#mates" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Add new mate</a></li>
       <li><a href="#room" ng-click="toggleMenu = false"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Add new room</a></li>
       <hr class="short">
-      <li><a ng-show="!currentUser.guest" ng-click="logout()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a></li>
+      <li>
+        <a ng-show="!currentUser.guest" >
+          <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout
+        </a>
+        <ul class="confirm-logout">
+          <li><a href="#" ng-click="logout()">Logout now</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
   <!-- Page Content -->

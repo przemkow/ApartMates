@@ -1,14 +1,12 @@
 <div class="col-lg-1">
 </div>
-<div class="col-lg-10 approve" ng-app="myApp.mate" ng-controller="mate">
+<div class="col-lg-10 approve mates" ng-app="myApp.mate" ng-controller="mate">
 
 
     <div class="topRow">
         <button ng-click="newMate = true; btnAddMate = true" ng-hide="btnAddMate" class="btn btn-success"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i></button>
     </div>
-    <div class="alert alert-success" id="user-alert" style="clear:both; width:80%; display: none;">
-        <strong>Success!</strong> The invitation was sent!
-    </div>
+
     <form ng-show="newMate" novalidate name="newMateForm" class="form well">
         <div class="form-group">
             <label for="text">Mate name:</label>

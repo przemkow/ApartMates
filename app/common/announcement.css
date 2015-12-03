@@ -31,3 +31,7 @@
 .announcement .ng-enter {
     animation: 1.2s slideInRight ease;
 }
+
+.announcement .ng-hide {
+    animation: 1.2s slideInRight ease;
+}

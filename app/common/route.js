@@ -5,7 +5,7 @@
 myApp.config(
     ['$routeProvider', function($routeProvider) {
         $routeProvider.when('/homePage', {
-            title: 'ApartMates',
+            title: 'Homepage',
             templateUrl: './homePage/homePage.html'
         }).when('/approve', {
             title: 'Waiting for approve',
