@@ -3,7 +3,7 @@
         "id": 0,
         "title": "Living room cleaning",
         "resp_person": "Monika",
-        "deadline": "2015-11-27",
+        "deadline": "2015-12-19",
         "status": 0,
         "reject_info": ""
     },
@@ -11,7 +11,7 @@
         "id": 1,
         "title": "Bathroom cleaning",
         "resp_person": "Monika",
-        "deadline": "2015-12-02",
+        "deadline": "2015-12-22",
         "status": 0,
         "reject_info": ""
     },
@@ -19,7 +19,7 @@
         "id": 2,
         "title": "Kitchen cleaning",
         "resp_person": "Monika",
-        "deadline": "2015-11-16",
+        "deadline": "2015-11-19",
         "status": -1,
         "reject_info": [
             {
